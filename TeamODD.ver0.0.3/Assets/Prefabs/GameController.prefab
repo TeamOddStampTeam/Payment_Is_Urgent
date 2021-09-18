@@ -1,0 +1,78 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4486384032642005228
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4486384032642005230}
+  - component: {fileID: 4486384032642005231}
+  - component: {fileID: 4486384032642005225}
+  m_Layer: 0
+  m_Name: GameController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4486384032642005230
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4486384032642005228}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.5063672, y: -0.6288506, z: -0.9928713}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4486384032642005231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4486384032642005228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f5926c82e8c59b4da2bc566e62b4aee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stampPrefab: {fileID: 5062533313808634826, guid: 72bc18ba86bc6744d9e75f63c38f8c45, type: 3}
+  stampInjuAnimation: {fileID: 5413434764742747949, guid: 6279a1bbf08caf948984ebed1c38a1a0, type: 3}
+  injuAmount: {fileID: 0}
+  injuText: {fileID: 0}
+  stampTouch: 0
+  stamp: 0
+--- !u!114 &4486384032642005225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4486384032642005228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4ef80af30ee9e24a99f7783ebb55bca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  signPrefab: {fileID: 3066441445795230171, guid: 327c2fbaf1f3c5349af85e7a3a0bc8d6, type: 3}
+  sealingPrefab: {fileID: 809134250641748504, guid: 968eabfd5b85aee48a2708887d5e3514, type: 3}
+  stampPrefab1: {fileID: 116962755526828332, guid: 52bace89323b4e44294a145b40629f31, type: 3}
+  stampPrefab2: {fileID: 3528809681924722681, guid: 0fb424aef2ca3ea4794c8a11eb1536be, type: 3}
+  stampPrefab3: {fileID: 5741054504343852181, guid: 7c7df29e15bea8942938b39d8619f91b, type: 3}
+  stampPrefab4: {fileID: 799085567878789658, guid: 6038130df22f13c4fac3f46e6c6f7fa7, type: 3}
+  stampPrefab5: {fileID: 2015152062890077275, guid: 924bb55b6e526d44f98ba0ca1f54cd5d, type: 3}
+  stampPrefab6: {fileID: 2480601428665050520, guid: b56e69164ef50964095b94f605e73ab1, type: 3}
+  paperDragPrefab: {fileID: 3502454408986180186, guid: b036955d281e44b499b4c3b864e7d710, type: 3}
+  winPrefab: {fileID: 1531673001974687824, guid: 358ccb3c241fe624d9e6abe0341bee74, type: 3}
+  scoreSlider: {fileID: 0}
+  scoreText: {fileID: 0}
+  pageScore: 1
+  currentScore: 0
