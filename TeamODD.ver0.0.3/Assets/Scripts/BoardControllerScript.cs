@@ -126,6 +126,26 @@ public class BoardControllerScript : MonoBehaviour
 
             }
 
+            if (Input.touchCount > 0)
+            {
+                if (Input.GetTouch(0).phase == TouchPhase.Ended)
+                {
+                    mouseUpPosition = touchPos;
+
+                    //inju open
+                    if (mouseUpPosition.y > mouseDownPosition.y + 0.3f)
+                    {
+                        if (hit.transform.gameObject.name == "StampInjuObj")
+                        {
+                            SoundManager.soundManager.INZ_1PlaySound();
+                            hit.transform.gameObject.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/StampInjuFullImg");
+                            stampInjuOpen = true;
+                            stampInjuTouch = false;
+                        }
+                    }
+                }
+            }
+
         }
 
         injuAmount.GetComponent<Image>().fillAmount = ((float)inkValue / 10);
