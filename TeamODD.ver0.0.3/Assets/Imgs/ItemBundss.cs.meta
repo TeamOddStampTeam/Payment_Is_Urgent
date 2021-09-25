@@ -8,6 +8,10 @@ MonoImporter:
   - Stamp_1_: {fileID: 21300000, guid: 999c2052a05e35a47990ddeef24380a7, type: 3}
   - Stamp_2_: {fileID: 21300000, guid: aa6b6b6fe4a54b34ca8c0165566ccff3, type: 3}
   - Stamp_3_: {fileID: 21300000, guid: 36984b05177a4b148a306926917e59dc, type: 3}
+  - Stamp_N_Ink_: {fileID: 21300000, guid: c50dbca7ea0103b4dbf39fb9d3f0ebf0, type: 3}
+  - Stamp_1_Ink_: {fileID: 21300000, guid: 9bddfd8ea98389447820a555c9ff3ca9, type: 3}
+  - Stamp_2_Ink_: {fileID: 21300000, guid: 1566558cdb2384341a1c5e600dcbbab8, type: 3}
+  - Stamp_3_Ink_: {fileID: 21300000, guid: 5137e96f2b9e024458e9b01612e15f2b, type: 3}
   - Table_N_: {instanceID: 0}
   - Table_1_: {fileID: 21300000, guid: 1e64c9029fa1d924bb691fcc2d8303b6, type: 3}
   - Table_2_: {fileID: 21300000, guid: 01fa859aec30e0847983df874fd0a202, type: 3}
