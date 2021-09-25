@@ -27,6 +27,12 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: eab1a4faf0e86f74b80efd8e14d6d4f7
   - enabled: 1
+    path: Assets/Scenes/SampleScene_T.unity
+    guid: e0af5b741a6ec3244bbe5395ded86ecc
+  - enabled: 1
+    path: Assets/Scenes/SampleScene_I.unity
+    guid: ec77e69e73946eb4590f1944b15c600b
+  - enabled: 1
     path: Assets/Scenes/ServerWait.unity
     guid: 15e1c57b04254b441a4a3aeff1912c4e
   - enabled: 1
