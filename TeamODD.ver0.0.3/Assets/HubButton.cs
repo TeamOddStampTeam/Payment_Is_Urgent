@@ -60,7 +60,7 @@ public class HubButton : MonoBehaviour
         {
             STGroup.GetComponent<Text>().text = ItemGroup_I[ListNum];
             StempsImage.GetComponent<Image>().sprite = ItemBundss.Ink_N;
-            ShapeImage.GetComponent<Image>().sprite = Testsss;
+            ShapeImage.GetComponent<Image>().sprite = ItemBundss.Close_Ink_N;
         }
 
         UnityEngine.Debug.Log(SaveData.Money);
@@ -179,25 +179,24 @@ public class HubButton : MonoBehaviour
             if (StampGroup[ListNum] == 0)
             {
                 StempsImage.GetComponent<Image>().sprite = ItemBundss.Ink_N;
-                ShapeImage.GetComponent<Image>().sprite = ItemBundss.Stamp_N;
+                ShapeImage.GetComponent<Image>().sprite = ItemBundss.Close_Ink_N;
             }
             else if (StampGroup[ListNum] == 1)
             {
                 //Debug.Log("커스텀1 + Stamp_1");
                 StempsImage.GetComponent<Image>().sprite = ItemBundss.Ink_1;
-                ShapeImage.GetComponent<Image>().sprite = Testsss;
-
+                ShapeImage.GetComponent<Image>().sprite = ItemBundss.Close_Ink_1;
             }
             else if (StampGroup[ListNum] == 2)
             {
                 StempsImage.GetComponent<Image>().sprite = ItemBundss.Ink_2;
-                ShapeImage.GetComponent<Image>().sprite = Testsss;
+                ShapeImage.GetComponent<Image>().sprite = ItemBundss.Close_Ink_2;
 
             }
             else if (StampGroup[ListNum] == 3)
             {
                 StempsImage.GetComponent<Image>().sprite = ItemBundss.Ink_3;
-                ShapeImage.GetComponent<Image>().sprite = Testsss;
+                ShapeImage.GetComponent<Image>().sprite = ItemBundss.Close_Ink_3;
 
             }
             else
@@ -293,7 +292,7 @@ public class HubButton : MonoBehaviour
         {
             STGroup.GetComponent<Text>().text = ItemGroup_I[ListNum];
             StempsImage.GetComponent<Image>().sprite = Selecting_Stuff_Lobby("Ink", StampGroup[ListNum]);
-            ShapeImage.GetComponent<Image>().sprite = Selecting_Stuff_Lobby("Ink_Color", StampGroup[ListNum]);
+            ShapeImage.GetComponent<Image>().sprite = Selecting_Stuff_Lobby("Close_Ink", StampGroup[ListNum]);
         }
         for (int x=0; ; x++)
         {
@@ -347,12 +346,12 @@ public class HubButton : MonoBehaviour
             else return Testsss;
         }
 
-        else if (Type == "Ink_Color")
+        else if (Type == "Close_Ink")
         {
-            if (Number == 0) { return ItemBundss.Stamp_N_Ink; }
-            else if (Number == 1) { return ItemBundss.Stamp_N_Ink; }
-            else if (Number == 2) { return ItemBundss.Stamp_N_Ink; }
-            else if (Number == 3) { return ItemBundss.Stamp_N_Ink; }
+            if (Number == 0) { return ItemBundss.Close_Ink_N; }
+            else if (Number == 1) { return ItemBundss.Close_Ink_1; }
+            else if (Number == 2) { return ItemBundss.Close_Ink_2; }
+            else if (Number == 3) { return ItemBundss.Close_Ink_3; }
             else return Testsss;
         }
 

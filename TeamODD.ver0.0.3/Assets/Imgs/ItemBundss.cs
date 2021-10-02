@@ -51,7 +51,16 @@ public class ItemBundss : MonoBehaviour
     public static Sprite Ink_2;
     public static Sprite Ink_3;
 
+    [Header("닫힌인주명")]
+    public Sprite Close_Ink_N_;
+    public Sprite Close_Ink_1_;
+    public Sprite Close_Ink_2_;
+    public Sprite Close_Ink_3_;
 
+    public static Sprite Close_Ink_N;
+    public static Sprite Close_Ink_1;
+    public static Sprite Close_Ink_2;
+    public static Sprite Close_Ink_3;
 
     [Header("오류")]
     public Sprite ERROR_;
@@ -79,6 +88,11 @@ public class ItemBundss : MonoBehaviour
         Ink_1 = Ink_1_;
         Ink_2 = Ink_2_;
         Ink_3 = Ink_3_;
+
+        Close_Ink_N = Close_Ink_N_;
+        Close_Ink_1 = Close_Ink_1_;
+        Close_Ink_2 = Close_Ink_2_;
+        Close_Ink_3 = Close_Ink_3_;
 
         ERROR = ERROR_;
     }
