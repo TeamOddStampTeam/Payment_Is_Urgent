@@ -124,11 +124,11 @@ public class SaveData : MonoBehaviour
 
             if (RemakeDataInHub == true)
             {
-               
-                HubButton.이름확인용.GetComponent<Text>().text = Name;
-                HubButton.레벨확인용.GetComponent<Text>().text = Levels;
-                HubButton.자본확인용.GetComponent<Text>().text = Money.ToString();
-                HubButton.점수확인용.GetComponent<Text>().text = Points.ToString();
+
+                StoreLobbyMovement.이름확인용.GetComponent<Text>().text = Name;
+                StoreLobbyMovement.레벨확인용.GetComponent<Text>().text = Levels;
+                StoreLobbyMovement.자본확인용.GetComponent<Text>().text = Money.ToString();
+                StoreLobbyMovement.점수확인용.GetComponent<Text>().text = Points.ToString();
 
                 RemakeDataInHub = false;
             }

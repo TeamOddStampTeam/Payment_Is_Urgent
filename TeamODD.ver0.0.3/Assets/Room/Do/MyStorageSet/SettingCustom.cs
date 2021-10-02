@@ -12,17 +12,17 @@ public class SettingCustom : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().name == "SampleScene")
         {
-            Stuff_Name.GetComponent<Text>().text = HubButton.ItemGroup_S[HubButton.ListNum];
+            Stuff_Name.GetComponent<Text>().text = StoreLobbyMovement.ItemGroup_S[StoreLobbyMovement.ListNum];
         }
 
         else if (SceneManager.GetActiveScene().name == "SampleScene_T")
         {
-            Stuff_Name.GetComponent<Text>().text = HubButton.ItemGroup_T[HubButton.ListNum];
+            Stuff_Name.GetComponent<Text>().text = StoreLobbyMovement.ItemGroup_T[StoreLobbyMovement.ListNum];
         }
 
         else if (SceneManager.GetActiveScene().name == "SampleScene_I")
         {
-            Stuff_Name.GetComponent<Text>().text = HubButton.ItemGroup_I[HubButton.ListNum];
+            Stuff_Name.GetComponent<Text>().text = StoreLobbyMovement.ItemGroup_I[StoreLobbyMovement.ListNum];
         }
          
     }
