@@ -274,7 +274,10 @@ public class HubButton : MonoBehaviour
 
     void Update()
     {
-        
+        자본확인용.GetComponent<Text>().text = SaveData.Money.ToString();
+        점수확인용.GetComponent<Text>().text = SaveData.Points.ToString();
+
+
         if (SceneManager.GetActiveScene().name == "SampleScene")
         {
             STGroup.GetComponent<Text>().text = ItemGroup_S[ListNum];
