@@ -22,8 +22,8 @@ public class StoreLobbyMovement : MonoBehaviour
     public static int Maxs;
 
     // 가운데 글씨 아이템 이름 설정
-    public static string[] ItemGroup_S = new string[] { "기본 스킨", "벚꽃", "하트", "주먹", "출시 예정", "출시 예정", "\0" }; //추후 다른 파일에서 불러오도록 설정
-    public static string[] ItemGroup_T = new string[] { "기본 스킨", "꽃", "하트", "스크래치", "출시예정", "출시예정" };
+    public static string[] ItemGroup_S = new string[] { "기본 스킨", "벚꽃", "하트", "주먹", "출시예정", "출시예정", "\0" }; //추후 다른 파일에서 불러오도록 설정
+    public static string[] ItemGroup_T = new string[] { "기본 스킨", "꽃", "하트", "스크래치", "출시예정", "출시예정","\0" };
     public static string[] ItemGroup_I = new string[] { "기본 스킨", "꽃무늬", "하트", "벽돌", "출시예정", "출시예정" };
 
     int[] StampGroup = new int[] { 0, 1, 2, 3, 4, 5 };

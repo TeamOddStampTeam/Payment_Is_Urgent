@@ -703,6 +703,7 @@ GameObject:
   - component: {fileID: 423103309}
   - component: {fileID: 423103308}
   - component: {fileID: 423103307}
+  - component: {fileID: 423103313}
   m_Layer: 5
   m_Name: Canv_Hub
   m_TagString: Untagged
@@ -818,6 +819,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &423103313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 423103306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca0e01c44f98ac645bc9b22eb20f60a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  STGroup: {fileID: 1552562106}
+  StempsImage: {fileID: 1128252616}
+  ShapeImage: {fileID: 0}
+  Testsss: {fileID: 21300000, guid: 0a89e501353a7ea48bf9a70b55a2c5c8, type: 3}
 --- !u!1 &446338508
 GameObject:
   m_ObjectHideFlags: 0
@@ -1275,15 +1292,19 @@ MonoBehaviour:
   Stamp_1_Ink_: {fileID: 21300000, guid: 9bddfd8ea98389447820a555c9ff3ca9, type: 3}
   Stamp_2_Ink_: {fileID: 21300000, guid: 1566558cdb2384341a1c5e600dcbbab8, type: 3}
   Stamp_3_Ink_: {fileID: 21300000, guid: 5137e96f2b9e024458e9b01612e15f2b, type: 3}
-  Table_N_: {fileID: 0}
+  Table_N_: {fileID: 21300000, guid: 1716b16a9bc150147803dae3ad44ad1d, type: 3}
   Table_1_: {fileID: 21300000, guid: 1e64c9029fa1d924bb691fcc2d8303b6, type: 3}
   Table_2_: {fileID: 21300000, guid: 01fa859aec30e0847983df874fd0a202, type: 3}
   Table_3_: {fileID: 21300000, guid: a133c997938f07b4dbae0bd4bb81fb33, type: 3}
-  Ink_N_: {fileID: 0}
-  Ink_1_: {fileID: 21300000, guid: 3c29a6114368b5d44bc7417b152b2962, type: 3}
-  Ink_2_: {fileID: 0}
-  Ink_3_: {fileID: 0}
-  ERROR_: {fileID: 0}
+  Ink_N_: {fileID: 21300000, guid: 149329b82db8fd94f94b13a9db98bca1, type: 3}
+  Ink_1_: {fileID: 21300000, guid: 259276e45f483b54eac89c2ca1446ee8, type: 3}
+  Ink_2_: {fileID: 21300000, guid: d15b619bbc77022469e8c5872dcf302c, type: 3}
+  Ink_3_: {fileID: 21300000, guid: e424dda1aa164bc4fa85acc2a0c45110, type: 3}
+  Close_Ink_N_: {fileID: 21300000, guid: a27282f03a3f9a24ba2a37352db8bb74, type: 3}
+  Close_Ink_1_: {fileID: 21300000, guid: 3e63fcbf51908ea4bac58ab75aefc33d, type: 3}
+  Close_Ink_2_: {fileID: 21300000, guid: cfa3f61d1bd7b7240b89aed424019e7c, type: 3}
+  Close_Ink_3_: {fileID: 21300000, guid: 972bf578498fc3e4b90703c4af303b87, type: 3}
+  ERROR_: {fileID: 21300000, guid: 0a89e501353a7ea48bf9a70b55a2c5c8, type: 3}
 --- !u!114 &678999374
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1483,8 +1504,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1455607894}
-        m_TargetAssemblyTypeName: 
+      - m_Target: {fileID: 1455607897}
+        m_TargetAssemblyTypeName: StoreLobbyMovement, Assembly-CSharp
         m_MethodName: FAR
         m_Mode: 1
         m_Arguments:
@@ -1615,8 +1636,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1455607894}
-        m_TargetAssemblyTypeName: 
+      - m_Target: {fileID: 1455607897}
+        m_TargetAssemblyTypeName: StoreLobbyMovement, Assembly-CSharp
         m_MethodName: BAR
         m_Mode: 1
         m_Arguments:
@@ -2144,11 +2165,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Canvas: {fileID: 0}
-  STGroup: {fileID: 0}
-  StempsImage: {fileID: 1128252616}
-  ShapeImage: {fileID: 0}
   MatchLoading: {fileID: 0}
-  Testsss: {fileID: 0}
 --- !u!114 &1365254821
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2254,6 +2271,7 @@ GameObject:
   - component: {fileID: 1455607896}
   - component: {fileID: 1455607895}
   - component: {fileID: 1455607894}
+  - component: {fileID: 1455607897}
   m_Layer: 5
   m_Name: GroupGameButton
   m_TagString: Untagged
@@ -2303,11 +2321,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Canvas: {fileID: 0}
-  STGroup: {fileID: 1552562106}
-  StempsImage: {fileID: 1128252616}
-  ShapeImage: {fileID: 0}
   MatchLoading: {fileID: 0}
-  Testsss: {fileID: 21300000, guid: 0a89e501353a7ea48bf9a70b55a2c5c8, type: 3}
 --- !u!114 &1455607895
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2346,6 +2360,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1455607892}
   m_CullTransparentMesh: 0
+--- !u!114 &1455607897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1455607892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca0e01c44f98ac645bc9b22eb20f60a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  STGroup: {fileID: 1552562106}
+  StempsImage: {fileID: 1128252616}
+  ShapeImage: {fileID: 0}
+  Testsss: {fileID: 21300000, guid: 0a89e501353a7ea48bf9a70b55a2c5c8, type: 3}
 --- !u!1 &1511560037
 GameObject:
   m_ObjectHideFlags: 0
