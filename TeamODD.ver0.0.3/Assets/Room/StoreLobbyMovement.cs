@@ -28,9 +28,18 @@ public class StoreLobbyMovement : MonoBehaviour
 
     int[] StampGroup = new int[] { 0, 1, 2, 3, 4, 5 };
 
+    //구매 관련
+    public GameObject IBM;
+    private string[] Stamp_Price = new string[] { "50000", "50000", "50000","50000", "\0" };
+    private string[] Table_Price = new string[] { "30000", "30000", "40000", "\0" };
+    private string[] Ink_Price = new string[] { "40000", "40000", "40000", "\0" };
+    private int Money_Save;
+
     public void Awake()
     {
         SaveData.DoLoadData = true;
+        Money_Save = SaveData.Money;
+        IBM.SetActive(false);
 
         이름확인용 = GameObject.Find("TestName").GetComponent<Text>();
         레벨확인용 = GameObject.Find("TestDuty").GetComponent<Text>();
@@ -317,5 +326,105 @@ public class StoreLobbyMovement : MonoBehaviour
         }
 
         return ItemBundss.ERROR;
+    }
+
+    public void Wanna_Buy()
+    {
+        SaveData.Loads();
+        UnityEngine.Debug.Log(Money_Save);
+        if (SceneManager.GetActiveScene().name == "SampleScene")
+        {
+            if (SaveData.Stamp_Get[ListNum] == true)
+            {
+                UnityEngine.Debug.Log("이미 구매함");
+                return;
+            }
+            IBM.SetActive(true);
+        }
+        else if (SceneManager.GetActiveScene().name == "SampleScene_T")
+        {
+            if (SaveData.Table_Get[ListNum] == true)
+            {
+                UnityEngine.Debug.Log("이미 구매함");
+                return;
+            }
+            IBM.SetActive(true);
+        }
+        else if (SceneManager.GetActiveScene().name == "SampleScene_I")
+        {
+            if (SaveData.Ink_Get[ListNum] == true)
+            {
+                UnityEngine.Debug.Log("이미 구매함");
+                return;
+            }
+            IBM.SetActive(true);
+        }
+    }
+
+    public void Buy_It()
+    {
+        SaveData.Loads();
+        if (SceneManager.GetActiveScene().name == "SampleScene")
+        {
+            //재화가 있는지 확인
+            if (Money_Save >= int.Parse(Stamp_Price[ListNum]))//있다면 결재
+            {
+                Money_Save = Money_Save - int.Parse(Stamp_Price[ListNum]);
+                자본확인용.GetComponent<Text>().text = Money_Save.ToString();
+                SaveData.Stamp_Get[ListNum] = true;
+                SaveData.Money = Money_Save;
+                SaveData.Saves();
+            }
+            else//없으면 종료
+            {
+                자본확인용.GetComponent<Text>().text = Money_Save.ToString();
+                UnityEngine.Debug.Log("금액 부족");
+                UnityEngine.Debug.Log(SaveData.Money);
+            }
+        }
+        else if (SceneManager.GetActiveScene().name == "SampleScene_T")
+        {
+            //재화가 있는지 확인
+            if (Money_Save >= int.Parse(Table_Price[ListNum]))//있다면 결재
+            {
+                Money_Save = Money_Save - int.Parse(Table_Price[ListNum]);
+                자본확인용.GetComponent<Text>().text = Money_Save.ToString();
+                SaveData.Table_Get[ListNum] = true;
+                SaveData.Money = Money_Save;
+                SaveData.Saves();
+            }
+            else//없으면 종료
+            {
+                자본확인용.GetComponent<Text>().text = Money_Save.ToString();
+                UnityEngine.Debug.Log("금액 부족");
+                UnityEngine.Debug.Log(SaveData.Money);
+            }
+        }
+        else if (SceneManager.GetActiveScene().name == "SampleScene_I")
+        {
+            //재화가 있는지 확인
+            if (Money_Save >= int.Parse(Ink_Price[ListNum]))//있다면 결재
+            {
+                Money_Save = Money_Save - int.Parse(Ink_Price[ListNum]);
+                자본확인용.GetComponent<Text>().text = Money_Save.ToString();
+                SaveData.Ink_Get[ListNum] = true;
+                SaveData.Money = Money_Save;
+                SaveData.Saves();
+            }
+            else//없으면 종료
+            {
+                자본확인용.GetComponent<Text>().text = Money_Save.ToString();
+                UnityEngine.Debug.Log("금액 부족");
+                UnityEngine.Debug.Log(SaveData.Money);
+            }
+        }
+        SaveData.Saves();
+        IBM.SetActive(false);
+        SaveData.Loads();
+    }
+
+    public void IM_Mistake()
+    {
+        IBM.SetActive(false);
     }
 }
