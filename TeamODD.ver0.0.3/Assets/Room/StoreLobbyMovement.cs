@@ -30,9 +30,9 @@ public class StoreLobbyMovement : MonoBehaviour
 
     //구매 관련
     public GameObject IBM;
-    private string[] Stamp_Price = new string[] { "50000", "50000", "50000","50000", "\0" };
-    private string[] Table_Price = new string[] { "30000", "30000", "40000", "\0" };
-    private string[] Ink_Price = new string[] { "40000", "40000", "40000", "\0" };
+    private string[] Stamp_Price = new string[] { "0", "50000", "50000","50000", "\0" };
+    private string[] Table_Price = new string[] { "0","30000", "30000", "40000", "\0" };
+    private string[] Ink_Price = new string[] { "0","40000", "40000", "40000", "\0" };
     private int Money_Save;
 
     public void Awake()
@@ -339,6 +339,13 @@ public class StoreLobbyMovement : MonoBehaviour
                 UnityEngine.Debug.Log("이미 구매함");
                 return;
             }
+
+            if(ListNum == 0)
+            {
+                UnityEngine.Debug.Log("기본 스킨임");
+                return;
+            }
+
             IBM.SetActive(true);
         }
         else if (SceneManager.GetActiveScene().name == "SampleScene_T")
@@ -348,6 +355,12 @@ public class StoreLobbyMovement : MonoBehaviour
                 UnityEngine.Debug.Log("이미 구매함");
                 return;
             }
+
+            if (ListNum == 0)
+            {
+                UnityEngine.Debug.Log("기본 스킨임");
+                return;
+            }
             IBM.SetActive(true);
         }
         else if (SceneManager.GetActiveScene().name == "SampleScene_I")
@@ -355,6 +368,12 @@ public class StoreLobbyMovement : MonoBehaviour
             if (SaveData.Ink_Get[ListNum] == true)
             {
                 UnityEngine.Debug.Log("이미 구매함");
+                return;
+            }
+
+            if (ListNum == 0)
+            {
+                UnityEngine.Debug.Log("기본 스킨임");
                 return;
             }
             IBM.SetActive(true);

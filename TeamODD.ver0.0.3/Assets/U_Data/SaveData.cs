@@ -13,8 +13,8 @@ public class SaveData : MonoBehaviour
     public static int Money = 999999;
     public static int Points = 0;
     public static bool[] Stamp_Get = new bool[4] { false, false, false, false };
-    public static bool[] Ink_Get = new bool[3] { false, false, false };
-    public static bool[] Table_Get = new bool[3] { false, false, false };
+    public static bool[] Ink_Get = new bool[4] { false, false, false, false };
+    public static bool[] Table_Get = new bool[4] { false, false, false, false };
 
     public static string DataPath = "/Userdata.dat";
 
@@ -30,8 +30,8 @@ public class SaveData : MonoBehaviour
         public int money_;
         public int points_;
         public bool[] Stamp_Get_ = new bool[4];
-        public bool[] Ink_Get_ = new bool[3];
-        public bool[] Table_Get_ = new bool[3];
+        public bool[] Ink_Get_ = new bool[4];
+        public bool[] Table_Get_ = new bool[4];
     }
 
     public static void Saves()
