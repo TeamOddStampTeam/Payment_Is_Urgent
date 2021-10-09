@@ -3025,9 +3025,9 @@ MonoBehaviour:
   Stamp_2_Ink_: {fileID: 21300000, guid: 1566558cdb2384341a1c5e600dcbbab8, type: 3}
   Stamp_3_Ink_: {fileID: 21300000, guid: 5137e96f2b9e024458e9b01612e15f2b, type: 3}
   Table_N_: {fileID: 21300000, guid: 1716b16a9bc150147803dae3ad44ad1d, type: 3}
-  Table_1_: {fileID: 21300000, guid: 1e64c9029fa1d924bb691fcc2d8303b6, type: 3}
+  Table_1_: {fileID: 21300000, guid: f149ecf921f98fe4898f683de46e60f7, type: 3}
   Table_2_: {fileID: 21300000, guid: 01fa859aec30e0847983df874fd0a202, type: 3}
-  Table_3_: {fileID: 21300000, guid: a133c997938f07b4dbae0bd4bb81fb33, type: 3}
+  Table_3_: {fileID: 21300000, guid: 3d473c9ec44f32b4f9deae3eeb16dd07, type: 3}
   Ink_N_: {fileID: 21300000, guid: 149329b82db8fd94f94b13a9db98bca1, type: 3}
   Ink_1_: {fileID: 21300000, guid: 259276e45f483b54eac89c2ca1446ee8, type: 3}
   Ink_2_: {fileID: 21300000, guid: d15b619bbc77022469e8c5872dcf302c, type: 3}
