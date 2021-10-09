@@ -51,7 +51,7 @@ public class HubButton : MonoBehaviour
     }
     public void Custom()
     {
-        SceneManager.LoadScene("MyStorage");
+        //SceneManager.LoadScene("MyStorage");
     }
 
     void Update()
