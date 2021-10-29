@@ -10,7 +10,6 @@ public class StoreLobbyMovement : MonoBehaviour
     public GameObject StempsImage;
     public GameObject ShapeImage;
 
-
     public Sprite Testsss;
 
     public static Text 이름확인용;
@@ -35,11 +34,16 @@ public class StoreLobbyMovement : MonoBehaviour
     private string[] Ink_Price = new string[] { "0","40000", "40000", "40000", "\0" };
     private int Money_Save;
 
+    private GameObject lock_img; //글씨위의 좌물쇠 이미지
+    private GameObject lock_img_I;
+    private GameObject lock_img_T;
+
     public void Awake()
     {
         SaveData.DoLoadData = true;
         Money_Save = SaveData.Money;
         IBM.SetActive(false);
+        Buy_Check();
 
         이름확인용 = GameObject.Find("TestName").GetComponent<Text>();
         레벨확인용 = GameObject.Find("TestDuty").GetComponent<Text>();
@@ -49,7 +53,6 @@ public class StoreLobbyMovement : MonoBehaviour
         자본확인용.GetComponent<Text>().text = SaveData.Money.ToString();
         점수확인용.GetComponent<Text>().text = SaveData.Points.ToString();
 
-        //여기 왜 오류나징
         if (SceneManager.GetActiveScene().name == "SampleScene")
         {
             STGroup.GetComponent<Text>().text = ItemGroup_S[ListNum];
@@ -77,12 +80,19 @@ public class StoreLobbyMovement : MonoBehaviour
     void Start()
     {
         ListNum = 0;
-
+        if (SceneManager.GetActiveScene().name == "SampleScene")
+            lock_img = GameObject.Find("NotBuy");
+        else if (SceneManager.GetActiveScene().name == "SampleScene_I")
+            lock_img_I = GameObject.Find("NotBuy_T");
+        else if (SceneManager.GetActiveScene().name == "SampleScene_T")
+            lock_img_T = GameObject.Find("NotBuy_T");
         choseStampSkin();
     }
 
     public void FAR()
     {
+        Buy_Check();
+
         ListNum++;
         if (ListNum == Maxs + 1)
             ListNum = 0;
@@ -234,6 +244,7 @@ public class StoreLobbyMovement : MonoBehaviour
             STGroup.GetComponent<Text>().text = ItemGroup_I[ListNum];
         }
         choseStampSkin();
+        Buy_Check();
         //UnityEngine.Debug.Log("Back Arrow");
     }
 
@@ -242,7 +253,6 @@ public class StoreLobbyMovement : MonoBehaviour
     {
         자본확인용.GetComponent<Text>().text = SaveData.Money.ToString();
         점수확인용.GetComponent<Text>().text = SaveData.Points.ToString();
-
 
         if (SceneManager.GetActiveScene().name == "SampleScene")
         {
@@ -377,6 +387,47 @@ public class StoreLobbyMovement : MonoBehaviour
                 return;
             }
             IBM.SetActive(true);
+        }
+    }
+
+    public void Buy_Check()
+    {
+        SaveData.Loads();
+        if (SceneManager.GetActiveScene().name == "SampleScene")
+        {
+            if (0 < ListNum && ListNum < 4)
+            {
+                if (SaveData.Stamp_Get[ListNum] == true)
+                {
+                    lock_img.SetActive(false);
+                }
+                else GameObject.Find("StampsBundle").transform.Find("NotBuy").gameObject.SetActive(true); 
+            }
+            else GameObject.Find("StampsBundle").transform.Find("NotBuy").gameObject.SetActive(true);
+        }
+        else if (SceneManager.GetActiveScene().name == "SampleScene_T")
+        {
+            if (0 < ListNum && ListNum < 4)
+            {
+                if (SaveData.Table_Get[ListNum] == true)
+                {
+                    lock_img_T.SetActive(false);
+                }
+                else GameObject.Find("StampsBundle").transform.Find("NotBuy_T").gameObject.SetActive(true);
+            }
+            else GameObject.Find("StampsBundle").transform.Find("NotBuy_T").gameObject.SetActive(true);
+        }
+        else if (SceneManager.GetActiveScene().name == "SampleScene_I")
+        {
+            if (0 < ListNum && ListNum < 4)
+            {
+                if (SaveData.Ink_Get[ListNum] == true)
+                {
+                    lock_img_I.SetActive(false);
+                }
+                else GameObject.Find("StampsBundle").transform.Find("NotBuy_I").gameObject.SetActive(true);
+            }
+            else GameObject.Find("StampsBundle").transform.Find("NotBuy_I").gameObject.SetActive(true);
         }
     }
 
