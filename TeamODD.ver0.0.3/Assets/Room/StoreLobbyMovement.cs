@@ -388,10 +388,19 @@ public class StoreLobbyMovement : MonoBehaviour
                 if (SaveData.Stamp_Get[ListNum] == true)
                 {
                     GameObject.Find("StampsBundle").transform.Find("NotBuy").gameObject.SetActive(false);
+                    GameObject.Find("StampsBundle").transform.Find("BuyComplete").gameObject.SetActive(true);
                 }
-                else GameObject.Find("StampsBundle").transform.Find("NotBuy").gameObject.SetActive(true); 
+                else
+                {
+                    GameObject.Find("StampsBundle").transform.Find("NotBuy").gameObject.SetActive(true);
+                    GameObject.Find("StampsBundle").transform.Find("BuyComplete").gameObject.SetActive(false);
+                }
             }
-            else GameObject.Find("StampsBundle").transform.Find("NotBuy").gameObject.SetActive(false);
+            else
+            {
+                GameObject.Find("StampsBundle").transform.Find("NotBuy").gameObject.SetActive(false);
+                GameObject.Find("StampsBundle").transform.Find("BuyComplete").gameObject.SetActive(false);
+            }
         }
         else if (SceneManager.GetActiveScene().name == "SampleScene_T")
         {
@@ -400,10 +409,19 @@ public class StoreLobbyMovement : MonoBehaviour
                 if (SaveData.Table_Get[ListNum] == true)
                 {
                     GameObject.Find("StampsBundle").transform.Find("NotBuy_T").gameObject.SetActive(false);
+                    GameObject.Find("StampsBundle").transform.Find("BuyComplete").gameObject.SetActive(true);
                 }
-                else GameObject.Find("StampsBundle").transform.Find("NotBuy_T").gameObject.SetActive(true);
+                else
+                {
+                    GameObject.Find("StampsBundle").transform.Find("NotBuy_T").gameObject.SetActive(true);
+                    GameObject.Find("StampsBundle").transform.Find("BuyComplete").gameObject.SetActive(false);
+                }
             }
-            else GameObject.Find("StampsBundle").transform.Find("NotBuy_T").gameObject.SetActive(false);
+            else
+            {
+                GameObject.Find("StampsBundle").transform.Find("NotBuy_T").gameObject.SetActive(false);
+                GameObject.Find("StampsBundle").transform.Find("BuyComplete").gameObject.SetActive(false);
+            }
         }
         else if (SceneManager.GetActiveScene().name == "SampleScene_I")
         {
@@ -412,10 +430,19 @@ public class StoreLobbyMovement : MonoBehaviour
                 if (SaveData.Ink_Get[ListNum] == true)
                 {
                     GameObject.Find("StampsBundle").transform.Find("NotBuy_I").gameObject.SetActive(false);
+                    GameObject.Find("StampsBundle").transform.Find("BuyComplete").gameObject.SetActive(true);
                 }
-                else GameObject.Find("StampsBundle").transform.Find("NotBuy_I").gameObject.SetActive(true);
+                else
+                {
+                    GameObject.Find("StampsBundle").transform.Find("NotBuy_I").gameObject.SetActive(true);
+                    GameObject.Find("StampsBundle").transform.Find("BuyComplete").gameObject.SetActive(false);
+                }
             }
-            else GameObject.Find("StampsBundle").transform.Find("NotBuy_I").gameObject.SetActive(false);
+            else
+            {
+                GameObject.Find("StampsBundle").transform.Find("NotBuy_I").gameObject.SetActive(false);
+                GameObject.Find("StampsBundle").transform.Find("BuyComplete").gameObject.SetActive(false);
+            }
         }
     }
 
