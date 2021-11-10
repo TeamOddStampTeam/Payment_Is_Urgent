@@ -389,17 +389,47 @@ public class StoreLobbyMovement : MonoBehaviour
                 {
                     GameObject.Find("StampsBundle").transform.Find("NotBuy").gameObject.SetActive(false);
                     GameObject.Find("StampsBundle").transform.Find("BuyComplete").gameObject.SetActive(true);
+
+                    GameObject goImage = GameObject.Find("ShowShape");
+                    Color color = goImage.GetComponent<Image>().color;
+                    color.a = 1.0f;
+                    goImage.GetComponent<Image>().color = color;
+
+                    GameObject goImage1 = GameObject.Find("ShowStamp");
+                    Color color1 = goImage1.GetComponent<Image>().color;
+                    color1.a = 1.0f;
+                    goImage1.GetComponent<Image>().color = color1;
                 }
                 else
                 {
                     GameObject.Find("StampsBundle").transform.Find("NotBuy").gameObject.SetActive(true);
                     GameObject.Find("StampsBundle").transform.Find("BuyComplete").gameObject.SetActive(false);
+
+                    GameObject goImage = GameObject.Find("ShowShape");
+                    Color color = goImage.GetComponent<Image>().color;
+                    color.a = 0.5f;
+                    goImage.GetComponent<Image>().color = color;
+
+                    GameObject goImage1 = GameObject.Find("ShowStamp");
+                    Color color1 = goImage1.GetComponent<Image>().color;
+                    color1.a = 0.5f;
+                    goImage1.GetComponent<Image>().color = color1;
                 }
             }
             else
             {
                 GameObject.Find("StampsBundle").transform.Find("NotBuy").gameObject.SetActive(false);
                 GameObject.Find("StampsBundle").transform.Find("BuyComplete").gameObject.SetActive(false);
+
+                GameObject goImage = GameObject.Find("ShowShape");
+                Color color = goImage.GetComponent<Image>().color;
+                color.a = 1.0f;
+                goImage.GetComponent<Image>().color = color;
+
+                GameObject goImage1 = GameObject.Find("ShowStamp");
+                Color color1 = goImage1.GetComponent<Image>().color;
+                color1.a = 1.0f;
+                goImage1.GetComponent<Image>().color = color1;
             }
         }
         else if (SceneManager.GetActiveScene().name == "SampleScene_T")
@@ -410,17 +440,32 @@ public class StoreLobbyMovement : MonoBehaviour
                 {
                     GameObject.Find("StampsBundle").transform.Find("NotBuy_T").gameObject.SetActive(false);
                     GameObject.Find("StampsBundle").transform.Find("BuyComplete").gameObject.SetActive(true);
+
+                    GameObject goImage1 = GameObject.Find("ShowStamp");
+                    Color color1 = goImage1.GetComponent<Image>().color;
+                    color1.a = 1.0f;
+                    goImage1.GetComponent<Image>().color = color1;
                 }
                 else
                 {
                     GameObject.Find("StampsBundle").transform.Find("NotBuy_T").gameObject.SetActive(true);
                     GameObject.Find("StampsBundle").transform.Find("BuyComplete").gameObject.SetActive(false);
+
+                    GameObject goImage1 = GameObject.Find("ShowStamp");
+                    Color color1 = goImage1.GetComponent<Image>().color;
+                    color1.a = 0.5f;
+                    goImage1.GetComponent<Image>().color = color1;
                 }
             }
             else
             {
                 GameObject.Find("StampsBundle").transform.Find("NotBuy_T").gameObject.SetActive(false);
                 GameObject.Find("StampsBundle").transform.Find("BuyComplete").gameObject.SetActive(false);
+
+                GameObject goImage1 = GameObject.Find("ShowStamp");
+                Color color1 = goImage1.GetComponent<Image>().color;
+                color1.a = 1.0f;
+                goImage1.GetComponent<Image>().color = color1;
             }
         }
         else if (SceneManager.GetActiveScene().name == "SampleScene_I")
@@ -428,20 +473,53 @@ public class StoreLobbyMovement : MonoBehaviour
             if (0 < ListNum && ListNum < 4)
             {
                 if (SaveData.Ink_Get[ListNum] == true)
-                {
+                { //구매 완료
                     GameObject.Find("StampsBundle").transform.Find("NotBuy_I").gameObject.SetActive(false);
                     GameObject.Find("StampsBundle").transform.Find("BuyComplete").gameObject.SetActive(true);
+
+                    GameObject goImage = GameObject.Find("ShowShape");
+                    Color color = goImage.GetComponent<Image>().color;
+                    color.a = 1.0f;
+                    goImage.GetComponent<Image>().color = color;
+
+                    GameObject goImage1 = GameObject.Find("ShowStamp");
+                    Color color1 = goImage1.GetComponent<Image>().color;
+                    color1.a = 1.0f;
+                    goImage1.GetComponent<Image>().color = color1;
+
                 }
                 else
-                {
+                { //구매하기 전
                     GameObject.Find("StampsBundle").transform.Find("NotBuy_I").gameObject.SetActive(true);
                     GameObject.Find("StampsBundle").transform.Find("BuyComplete").gameObject.SetActive(false);
+
+
+                    GameObject goImage = GameObject.Find("ShowShape");
+                    Color color = goImage.GetComponent<Image>().color;
+                    color.a = 0.5f;
+                    goImage.GetComponent<Image>().color = color;
+
+                    GameObject goImage1 = GameObject.Find("ShowStamp");
+                    Color color1 = goImage1.GetComponent<Image>().color;
+                    color1.a = 0.5f;
+                    goImage1.GetComponent<Image>().color = color1;
+
                 }
             }
             else
-            {
+            { //구매하기 전
                 GameObject.Find("StampsBundle").transform.Find("NotBuy_I").gameObject.SetActive(false);
                 GameObject.Find("StampsBundle").transform.Find("BuyComplete").gameObject.SetActive(false);
+
+                GameObject goImage = GameObject.Find("ShowShape");
+                Color color = goImage.GetComponent<Image>().color;
+                color.a = 1.0f;
+                goImage.GetComponent<Image>().color = color;
+
+                GameObject goImage1 = GameObject.Find("ShowStamp");
+                Color color1 = goImage1.GetComponent<Image>().color;
+                color1.a = 1.0f;
+                goImage1.GetComponent<Image>().color = color1;
             }
         }
     }
