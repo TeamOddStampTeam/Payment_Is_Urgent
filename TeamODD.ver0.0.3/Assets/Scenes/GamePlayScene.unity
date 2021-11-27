@@ -836,6 +836,7 @@ MonoBehaviour:
   NOPE: {fileID: 8300000, guid: e7f279419a484774683b9a9f77ad967a, type: 3}
   Win: {fileID: 8300000, guid: cfb6cf096ca671a4dad0d93231450cf1, type: 3}
   Lose: {fileID: 8300000, guid: 895aab99eb0056d4d8c6bb439fe5c609, type: 3}
+  choice: {fileID: 8300000, guid: 9fef8d66743c1204c97b1ce953e7b8b8, type: 3}
 --- !u!4 &562495150
 Transform:
   m_ObjectHideFlags: 0

@@ -81,6 +81,7 @@ public class StoreLobbyMovement : MonoBehaviour
 
     public void FAR()
     {
+        SoundManager.soundManager.ButtonChoicePlaySound();
         ListNum++;
         if (ListNum == Maxs + 1)
             ListNum = 0;
@@ -214,6 +215,7 @@ public class StoreLobbyMovement : MonoBehaviour
 
     public void BAR()
     {
+        SoundManager.soundManager.ButtonChoicePlaySound();
         ListNum--;
         if (ListNum == -1)
             ListNum = Maxs;
@@ -332,6 +334,7 @@ public class StoreLobbyMovement : MonoBehaviour
         UnityEngine.Debug.Log(Money_Save);
         if (SceneManager.GetActiveScene().name == "SampleScene")
         {
+            SoundManager.soundManager.ButtonChoicePlaySound();
             if (SaveData.Stamp_Get[ListNum] == true)
             {
                 UnityEngine.Debug.Log("이미 구매함");
@@ -348,6 +351,7 @@ public class StoreLobbyMovement : MonoBehaviour
         }
         else if (SceneManager.GetActiveScene().name == "SampleScene_T")
         {
+            SoundManager.soundManager.ButtonChoicePlaySound();
             if (SaveData.Table_Get[ListNum] == true)
             {
                 UnityEngine.Debug.Log("이미 구매함");
@@ -363,6 +367,7 @@ public class StoreLobbyMovement : MonoBehaviour
         }
         else if (SceneManager.GetActiveScene().name == "SampleScene_I")
         {
+            SoundManager.soundManager.ButtonChoicePlaySound();
             if (SaveData.Ink_Get[ListNum] == true)
             {
                 UnityEngine.Debug.Log("이미 구매함");
@@ -529,6 +534,7 @@ public class StoreLobbyMovement : MonoBehaviour
         SaveData.Loads();
         if (SceneManager.GetActiveScene().name == "SampleScene")
         {
+            SoundManager.soundManager.ButtonChoicePlaySound();
             //재화가 있는지 확인
             if (Money_Save >= int.Parse(Stamp_Price[ListNum]))//있다면 결재
             {
@@ -547,6 +553,7 @@ public class StoreLobbyMovement : MonoBehaviour
         }
         else if (SceneManager.GetActiveScene().name == "SampleScene_T")
         {
+            SoundManager.soundManager.ButtonChoicePlaySound();
             //재화가 있는지 확인
             if (Money_Save >= int.Parse(Table_Price[ListNum]))//있다면 결재
             {
@@ -565,6 +572,7 @@ public class StoreLobbyMovement : MonoBehaviour
         }
         else if (SceneManager.GetActiveScene().name == "SampleScene_I")
         {
+            SoundManager.soundManager.ButtonChoicePlaySound();
             //재화가 있는지 확인
             if (Money_Save >= int.Parse(Ink_Price[ListNum]))//있다면 결재
             {
@@ -588,6 +596,7 @@ public class StoreLobbyMovement : MonoBehaviour
 
     public void IM_Mistake()
     {
+        SoundManager.soundManager.ButtonChoicePlaySound();
         IBM.SetActive(false);
     }
 }

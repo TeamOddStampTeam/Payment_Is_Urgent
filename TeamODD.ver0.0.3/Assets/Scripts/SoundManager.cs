@@ -26,7 +26,9 @@ public class SoundManager : MonoBehaviour
     public AudioClip NOPE; //페이지 넘기기 패널티
     public AudioClip Win; //승리 화면
     public AudioClip Lose; //패배화면
-    
+
+    public AudioClip choice; // 버튼 선택
+
     AudioSource SoundSource;
 
     public static SoundManager soundManager;
@@ -140,5 +142,10 @@ public class SoundManager : MonoBehaviour
     public void LosePlaySound()
     {
         SoundSource.PlayOneShot(Lose);
+    }
+
+    public void ButtonChoicePlaySound()
+    {
+        SoundSource.PlayOneShot(choice);
     }
 }
