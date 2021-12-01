@@ -35,13 +35,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ServerWait.unity
     guid: 15e1c57b04254b441a4a3aeff1912c4e
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Store.unity
     guid: 2752c64d99cefde4690c6dd71f410002
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Store_I.unity
     guid: c13b92f4a8f51fd4b9e6f139a920f949
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Store_T.unity
     guid: 7ef2917c26114704aa34d74da4757841
   m_configObjects: {}
