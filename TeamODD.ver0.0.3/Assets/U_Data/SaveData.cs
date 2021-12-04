@@ -22,6 +22,8 @@ public class SaveData : MonoBehaviour
     public static bool DoLoadData = false;
     public static bool RemakeDataInHub = false;
 
+    public static bool Check_Loads_Files = false;
+
     [Serializable]
     public class Players
     {
@@ -62,27 +64,36 @@ public class SaveData : MonoBehaviour
     public static void Loads()
     {
         BinaryFormatter bf = new BinaryFormatter();
-        FileStream file = File.Open(Application.persistentDataPath+DataPath, FileMode.Open);
 
-        if(file != null && file.Length>0)
+        try
         {
-            Players data = (Players)bf.Deserialize(file);
+            FileStream file = File.Open(Application.persistentDataPath + DataPath, FileMode.Open);
+            if (file != null && file.Length > 0)
+            {
+                Players data = (Players)bf.Deserialize(file);
 
-            //B--->A
-            Name = data.name_;
-            Levels = data.levels_;
-            Money = data.money_;
-            Points = data.points_;
-            Stamp_Get = data.Stamp_Get_;
-            Ink_Get = data.Ink_Get_;
-            Table_Get = data.Table_Get_;
+                //B--->A
+                Name = data.name_;
+                Levels = data.levels_;
+                Money = data.money_;
+                Points = data.points_;
+                Stamp_Get = data.Stamp_Get_;
+                Ink_Get = data.Ink_Get_;
+                Table_Get = data.Table_Get_;
+            }
+            Check_Loads_Files = true;
+            file.Close();
         }
-
-        file.Close();
+        catch
+        {
+            Check_Loads_Files = false;
+        }
+        
     }
 
     void Awake()
     {
+        Check_Loads_Files = false;
         if (DoChangeData == true)
         {
             Saves();
