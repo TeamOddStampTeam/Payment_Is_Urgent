@@ -93,7 +93,6 @@ public class SaveData : MonoBehaviour
 
     void Awake()
     {
-        Check_Loads_Files = false;
         if (DoChangeData == true)
         {
             Saves();
