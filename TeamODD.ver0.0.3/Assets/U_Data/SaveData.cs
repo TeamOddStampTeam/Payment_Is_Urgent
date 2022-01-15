@@ -15,6 +15,9 @@ public class SaveData : MonoBehaviour
     public static bool[] Stamp_Get = new bool[4] { false, false, false, false };
     public static bool[] Ink_Get = new bool[4] { false, false, false, false };
     public static bool[] Table_Get = new bool[4] { false, false, false, false };
+    public static int ListNum_S = 0;
+    public static int ListNum_T = 0;
+    public static int ListNum_I = 0;
 
     public static string DataPath = "/Userdata.dat";
 
@@ -34,6 +37,9 @@ public class SaveData : MonoBehaviour
         public bool[] Stamp_Get_ = new bool[4];
         public bool[] Ink_Get_ = new bool[4];
         public bool[] Table_Get_ = new bool[4];
+        public int ListNum_S_;
+        public int ListNum_T_;
+        public int ListNum_I_;
     }
 
     public static void Saves()
@@ -51,7 +57,9 @@ public class SaveData : MonoBehaviour
         data.Stamp_Get_ = Stamp_Get;
         data.Ink_Get_ = Ink_Get;
         data.Table_Get_ = Table_Get;
-
+        data.ListNum_S_ = ListNum_S;
+        data.ListNum_T_ = ListNum_T;
+        data.ListNum_I_ = ListNum_I;
 
         //B직렬화 & 파일 저장
         bf.Serialize(file, data);
@@ -80,6 +88,9 @@ public class SaveData : MonoBehaviour
                 Stamp_Get = data.Stamp_Get_;
                 Ink_Get = data.Ink_Get_;
                 Table_Get = data.Table_Get_;
+                ListNum_S = data.ListNum_S_;
+                ListNum_I = data.ListNum_I_;
+                ListNum_T = data.ListNum_T_;
             }
             Check_Loads_Files = true;
             file.Close();

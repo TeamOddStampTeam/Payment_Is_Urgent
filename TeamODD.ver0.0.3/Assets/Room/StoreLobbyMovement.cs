@@ -18,9 +18,6 @@ public class StoreLobbyMovement : MonoBehaviour
     public static Text 점수확인용;
 
     public static int ListNum;
-    public static int ListNum_S;
-    public static int ListNum_T;
-    public static int ListNum_I;
     public static int Maxs;
 
     // 가운데 글씨 아이템 이름 설정
@@ -79,9 +76,6 @@ public class StoreLobbyMovement : MonoBehaviour
     void Start()
     {
         ListNum = 0;
-        ListNum_S = 0;
-        ListNum_T = 0;
-        ListNum_I = 0;
         choseStampSkin();
     }
 
@@ -343,14 +337,16 @@ public class StoreLobbyMovement : MonoBehaviour
             SoundManager.soundManager.ButtonChoicePlaySound();
             if (SaveData.Stamp_Get[ListNum] == true)
             {
-                ListNum_S = ListNum;
+                SaveData.ListNum_S = ListNum;
                 UnityEngine.Debug.Log("이미 구매함 스킨 설정됨");
+                SaveData.Saves();
                 return;
             }
 
             if(ListNum == 0)
             {
-                ListNum_S = ListNum;
+                SaveData.ListNum_S = ListNum;
+                SaveData.Saves();
                 UnityEngine.Debug.Log("기본 스킨임");
                 return;
             }
@@ -362,14 +358,16 @@ public class StoreLobbyMovement : MonoBehaviour
             SoundManager.soundManager.ButtonChoicePlaySound();
             if (SaveData.Table_Get[ListNum] == true)
             {
-                ListNum_T = ListNum;
+                SaveData.ListNum_T = ListNum;
+                SaveData.Saves();
                 UnityEngine.Debug.Log("이미 구매함 스킨 설정됨");
                 return;
             }
 
             if (ListNum == 0)
             {
-                ListNum_T = ListNum;
+                SaveData.ListNum_T = ListNum;
+                SaveData.Saves();
                 UnityEngine.Debug.Log("기본 스킨임");
                 return;
             }
@@ -380,19 +378,22 @@ public class StoreLobbyMovement : MonoBehaviour
             SoundManager.soundManager.ButtonChoicePlaySound();
             if (SaveData.Ink_Get[ListNum] == true)
             {
-                ListNum_I = ListNum;
+                SaveData.ListNum_I = ListNum;
+                SaveData.Saves();
                 UnityEngine.Debug.Log("이미 구매함 스킨 설정됨");
                 return;
             }
 
             if (ListNum == 0)
             {
-                ListNum_I = ListNum;
+                SaveData.ListNum_I = ListNum;
+                SaveData.Saves();
                 UnityEngine.Debug.Log("기본 스킨임");
                 return;
             }
             IBM.SetActive(true);
         }
+        
     }
 
     public void Buy_Check()

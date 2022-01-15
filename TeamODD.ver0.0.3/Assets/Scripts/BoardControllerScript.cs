@@ -17,6 +17,10 @@ public class BoardControllerScript : MonoBehaviour
 
     GameObject stampInjuTap;
     GameObject stampInju;
+    public GameObject stampInju2;
+
+    public Sprite[] stampInjuClosedSprite;
+    public Sprite[] stampInjuOpenSprite;
 
     Vector2 mouseUpPosition;
     Vector2 mouseDownPosition;
@@ -36,19 +40,23 @@ public class BoardControllerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        SaveData.DoLoadData = true;
+        SaveData.Loads();
         injuText.text = "x10";
         stampInjuTap = GameObject.Find("StampInjuTapObj");
         //stampInjuTap.GetComponent<SpriteRenderer>().enabled = false;
-        Debug.Log("ListNum = " + StoreLobbyMovement.ListNum);
-        stampPrefab = stampPrefabs[StoreLobbyMovement.ListNum_S];
+        stampPrefab = stampPrefabs[SaveData.ListNum_S];
 
         stampInjuTapObjRenderer = stampInjuTap.GetComponent<SpriteRenderer>();
-        stampInjuTapObjRenderer.sprite = stampSprite[StoreLobbyMovement.ListNum_S];
+        stampInjuTapObjRenderer.sprite = stampSprite[SaveData.ListNum_S];
+
+        stampInju2.GetComponent<SpriteRenderer>().sprite = stampInjuClosedSprite[SaveData.ListNum_I];
     }
 
     // Update is called once per frame
     void Update()
     {
+        SaveData.Loads();
         Vector2 touchPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         RaycastHit2D hit = Physics2D.Raycast(touchPos, Vector2.zero);
 
@@ -130,7 +138,8 @@ public class BoardControllerScript : MonoBehaviour
                     if (hit.transform.gameObject.name == "StampInjuObj")
                     {
                         SoundManager.soundManager.INZ_1PlaySound();
-                        hit.transform.gameObject.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/StampInjuFullImg");
+                        //hit.transform.gameObject.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/StampInjuFullImg");
+                        hit.transform.gameObject.GetComponent<SpriteRenderer>().sprite = stampInjuOpenSprite[SaveData.ListNum_I];
                         stampInjuOpen = true;
                         stampInjuTouch = false;
                     }
@@ -150,7 +159,8 @@ public class BoardControllerScript : MonoBehaviour
                         if (hit.transform.gameObject.name == "StampInjuObj")
                         {
                             SoundManager.soundManager.INZ_1PlaySound();
-                            hit.transform.gameObject.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/StampInjuFullImg");
+                            //hit.transform.gameObject.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/StampInjuFullImg");
+                            hit.transform.gameObject.GetComponent<SpriteRenderer>().sprite = stampInjuOpenSprite[SaveData.ListNum_I];
                             stampInjuOpen = true;
                             stampInjuTouch = false;
                         }
@@ -166,9 +176,11 @@ public class BoardControllerScript : MonoBehaviour
     //인주 닫기
     public void InjuClose()
     {
+        SaveData.Loads();
         SoundManager.soundManager.INZ_2PlaySound();
         stampInjuTap.GetComponent<SpriteRenderer>().enabled = false;
-        stampInju.transform.gameObject.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/StampInjuCloseImg");
+        //stampInju.transform.gameObject.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/StampInjuCloseImg");
+        stampInju.transform.gameObject.GetComponent<SpriteRenderer>().sprite = stampInjuClosedSprite[SaveData.ListNum_I];
         Instantiate(stampInjuAnimation, new Vector2(stampInjuTap.transform.position.x, stampInjuTap.transform.position.y), Quaternion.identity);
         Destroy(GameObject.Find(stampInjuAnimation.name + "(Clone)"), 0.2f);
 
