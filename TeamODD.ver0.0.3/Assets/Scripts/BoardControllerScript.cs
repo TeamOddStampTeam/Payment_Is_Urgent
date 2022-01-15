@@ -7,7 +7,8 @@ public class BoardControllerScript : MonoBehaviour
 {
     public GameObject[] stampPrefabs;
     private GameObject stampPrefab;
-    public GameObject StampInjuTapObj;
+    private SpriteRenderer stampInjuTapObjRenderer;
+    public Sprite[] stampSprite;
 
     public GameObject stampInjuAnimation;
     public GameObject injuAmount;
@@ -35,13 +36,14 @@ public class BoardControllerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
         injuText.text = "x10";
         stampInjuTap = GameObject.Find("StampInjuTapObj");
-        stampInjuTap.GetComponent<SpriteRenderer>().enabled = false;
+        //stampInjuTap.GetComponent<SpriteRenderer>().enabled = false;
         Debug.Log("ListNum = " + StoreLobbyMovement.ListNum);
         stampPrefab = stampPrefabs[StoreLobbyMovement.ListNum_S];
-        //StampInjuTapObj.GetComponent<Image>().sprite = stampPrefabs[StoreLobbyMovement.ListNum_S].GetComponent<Image>().sprite;
+
+        stampInjuTapObjRenderer = stampInjuTap.GetComponent<SpriteRenderer>();
+        stampInjuTapObjRenderer.sprite = stampSprite[StoreLobbyMovement.ListNum_S];
     }
 
     // Update is called once per frame

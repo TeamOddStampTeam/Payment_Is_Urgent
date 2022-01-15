@@ -2018,12 +2018,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stampPrefabs:
   - {fileID: 5062533313808634826, guid: 72bc18ba86bc6744d9e75f63c38f8c45, type: 3}
-  - {fileID: 5419864717804075348, guid: e10e2a479b4a03148a11462bb2ec6d01, type: 3}
-  - {fileID: 8223965693583041124, guid: b5be02a50a3f00146926a48215c0adef, type: 3}
-  - {fileID: 7623668038894940764, guid: b9afdab529d560d4e97996eebb7c0ea8, type: 3}
+  - {fileID: 245409379087752961, guid: e10e2a479b4a03148a11462bb2ec6d01, type: 3}
+  - {fileID: 1706726167383542279, guid: b5be02a50a3f00146926a48215c0adef, type: 3}
+  - {fileID: 3992871400833658475, guid: b9afdab529d560d4e97996eebb7c0ea8, type: 3}
   - {fileID: 5062533313808634826, guid: 72bc18ba86bc6744d9e75f63c38f8c45, type: 3}
   - {fileID: 5062533313808634826, guid: 72bc18ba86bc6744d9e75f63c38f8c45, type: 3}
-  StampInjuTapObj: {fileID: 479096067}
+  stampSprite:
+  - {fileID: 21300000, guid: 261efc2be64189f468f5387649651903, type: 3}
+  - {fileID: 21300000, guid: 9bddfd8ea98389447820a555c9ff3ca9, type: 3}
+  - {fileID: 21300000, guid: 1566558cdb2384341a1c5e600dcbbab8, type: 3}
+  - {fileID: 21300000, guid: 5137e96f2b9e024458e9b01612e15f2b, type: 3}
+  - {fileID: 21300000, guid: 261efc2be64189f468f5387649651903, type: 3}
+  - {fileID: 21300000, guid: 261efc2be64189f468f5387649651903, type: 3}
   stampInjuAnimation: {fileID: 5413434764742747949, guid: 6279a1bbf08caf948984ebed1c38a1a0, type: 3}
   injuAmount: {fileID: 1711402618}
   injuText: {fileID: 466213774}
