@@ -5,7 +5,10 @@ using UnityEngine.UI;
 
 public class BoardControllerScript : MonoBehaviour
 {
-    public GameObject stampPrefab;
+    public GameObject[] stampPrefabs;
+    private GameObject stampPrefab;
+    public GameObject StampInjuTapObj;
+
     public GameObject stampInjuAnimation;
     public GameObject injuAmount;
 
@@ -27,12 +30,18 @@ public class BoardControllerScript : MonoBehaviour
 
     public int stamp;
 
+    private Sprite stamp_sprite;
+
     // Start is called before the first frame update
     void Start()
     {
+
         injuText.text = "x10";
         stampInjuTap = GameObject.Find("StampInjuTapObj");
         stampInjuTap.GetComponent<SpriteRenderer>().enabled = false;
+        Debug.Log("ListNum = " + StoreLobbyMovement.ListNum);
+        stampPrefab = stampPrefabs[StoreLobbyMovement.ListNum_S];
+        //StampInjuTapObj.GetComponent<Image>().sprite = stampPrefabs[StoreLobbyMovement.ListNum_S].GetComponent<Image>().sprite;
     }
 
     // Update is called once per frame
@@ -54,6 +63,7 @@ public class BoardControllerScript : MonoBehaviour
                         {
                             inkValue--;
                             injuText.text = "x" + inkValue;
+                       
                             Instantiate(stampPrefab, new Vector2(touchPos.x, touchPos.y), Quaternion.identity);
                             SoundManager.soundManager.StampTapPlaySound();
 

@@ -27,7 +27,8 @@ public class HubButton : MonoBehaviour
     {
         SoundManager.soundManager.ButtonChoicePlaySound();
         //UnityEngine.Debug.Log("Join Room");
-        SceneManager.LoadScene("GameLobby");
+        //SceneManager.LoadScene("GameLobby");
+        SceneManager.LoadScene("GamePlayScene");
     }
 
     public void ShopStampSkins()
