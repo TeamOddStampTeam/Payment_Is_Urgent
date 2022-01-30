@@ -9,7 +9,7 @@ public class BoardControllerScript : MonoBehaviour
     private GameObject stampPrefab;
     private SpriteRenderer stampInjuTapObjRenderer;
     public Sprite[] stampSprite;
-
+    
     public GameObject stampInjuAnimation;
     public GameObject injuAmount;
 
@@ -21,6 +21,8 @@ public class BoardControllerScript : MonoBehaviour
 
     public Sprite[] stampInjuClosedSprite;
     public Sprite[] stampInjuOpenSprite;
+
+    public Sprite[] tableSprite;
 
     Vector2 mouseUpPosition;
     Vector2 mouseDownPosition;
@@ -35,6 +37,8 @@ public class BoardControllerScript : MonoBehaviour
 
     public int stamp;
 
+    GameObject BackgroundIMG;
+    private SpriteRenderer BackgroundIMGRenderer;
     private Sprite stamp_sprite;
 
     // Start is called before the first frame update
@@ -44,11 +48,15 @@ public class BoardControllerScript : MonoBehaviour
         SaveData.Loads();
         injuText.text = "x10";
         stampInjuTap = GameObject.Find("StampInjuTapObj");
+        BackgroundIMG = GameObject.Find("BackgroundIMG");
         //stampInjuTap.GetComponent<SpriteRenderer>().enabled = false;
         stampPrefab = stampPrefabs[SaveData.ListNum_S];
 
         stampInjuTapObjRenderer = stampInjuTap.GetComponent<SpriteRenderer>();
         stampInjuTapObjRenderer.sprite = stampSprite[SaveData.ListNum_S];
+
+        BackgroundIMGRenderer = BackgroundIMG.GetComponent<SpriteRenderer>();
+        BackgroundIMGRenderer.sprite = tableSprite[SaveData.ListNum_T];
 
         stampInju2.GetComponent<SpriteRenderer>().sprite = stampInjuClosedSprite[SaveData.ListNum_I];
     }
