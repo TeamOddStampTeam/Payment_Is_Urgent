@@ -77,6 +77,45 @@ public class StoreLobbyMovement : MonoBehaviour
     {
         ListNum = 0;
         choseStampSkin();
+
+        if (SceneManager.GetActiveScene().name == "SampleScene")
+        {
+            STGroup.GetComponent<Text>().text = ItemGroup_S[ListNum];
+            if (SaveData.ListNum_S == ListNum)
+            {
+                GameObject.Find("StampsBundle").transform.Find("UsingSkin").gameObject.SetActive(true);
+            }
+            else
+            {
+                GameObject.Find("StampsBundle").transform.Find("UsingSkin").gameObject.SetActive(false);
+            }
+        }
+
+        else if (SceneManager.GetActiveScene().name == "SampleScene_T")
+        {
+            STGroup.GetComponent<Text>().text = ItemGroup_T[ListNum];
+            if (SaveData.ListNum_T == ListNum)
+            {
+                GameObject.Find("StampsBundle").transform.Find("UsingSkin").gameObject.SetActive(true);
+            }
+            else
+            {
+                GameObject.Find("StampsBundle").transform.Find("UsingSkin").gameObject.SetActive(false);
+            }
+        }
+
+        else if (SceneManager.GetActiveScene().name == "SampleScene_I")
+        {
+            STGroup.GetComponent<Text>().text = ItemGroup_I[ListNum];
+            if (SaveData.ListNum_I == ListNum)
+            {
+                GameObject.Find("StampsBundle").transform.Find("UsingSkin").gameObject.SetActive(true);
+            }
+            else
+            {
+                GameObject.Find("StampsBundle").transform.Find("UsingSkin").gameObject.SetActive(false);
+            }
+        }
     }
 
     public void FAR()
@@ -90,16 +129,40 @@ public class StoreLobbyMovement : MonoBehaviour
         if (SceneManager.GetActiveScene().name == "SampleScene")
         {
             STGroup.GetComponent<Text>().text = ItemGroup_S[ListNum];
+            if (SaveData.ListNum_S == ListNum)
+            {
+                GameObject.Find("StampsBundle").transform.Find("UsingSkin").gameObject.SetActive(true);
+            }
+            else
+            {
+                GameObject.Find("StampsBundle").transform.Find("UsingSkin").gameObject.SetActive(false);
+            }
         }
 
         else if (SceneManager.GetActiveScene().name == "SampleScene_T")
         {
             STGroup.GetComponent<Text>().text = ItemGroup_T[ListNum];
+            if (SaveData.ListNum_T == ListNum)
+            {
+                GameObject.Find("StampsBundle").transform.Find("UsingSkin").gameObject.SetActive(true);
+            }
+            else
+            {
+                GameObject.Find("StampsBundle").transform.Find("UsingSkin").gameObject.SetActive(false);
+            }
         }
 
         else if (SceneManager.GetActiveScene().name == "SampleScene_I")
         {
             STGroup.GetComponent<Text>().text = ItemGroup_I[ListNum];
+            if (SaveData.ListNum_I == ListNum)
+            {
+                GameObject.Find("StampsBundle").transform.Find("UsingSkin").gameObject.SetActive(true);
+            }
+            else
+            {
+                GameObject.Find("StampsBundle").transform.Find("UsingSkin").gameObject.SetActive(false);
+            }
         }
 
         choseStampSkin();
@@ -222,17 +285,44 @@ public class StoreLobbyMovement : MonoBehaviour
         if (SceneManager.GetActiveScene().name == "SampleScene")
         {
             STGroup.GetComponent<Text>().text = ItemGroup_S[ListNum];
+            if (SaveData.ListNum_S == ListNum)
+            {
+                GameObject.Find("StampsBundle").transform.Find("UsingSkin").gameObject.SetActive(true);
+            }
+            else
+            {
+                GameObject.Find("StampsBundle").transform.Find("UsingSkin").gameObject.SetActive(false);
+            }
         }
 
         else if (SceneManager.GetActiveScene().name == "SampleScene_T")
         {
             STGroup.GetComponent<Text>().text = ItemGroup_T[ListNum];
+            if (SaveData.ListNum_T == ListNum)
+            {
+                GameObject.Find("StampsBundle").transform.Find("UsingSkin").gameObject.SetActive(true);
+            }
+            else
+            {
+                GameObject.Find("StampsBundle").transform.Find("UsingSkin").gameObject.SetActive(false);
+            }
         }
 
         else if (SceneManager.GetActiveScene().name == "SampleScene_I")
         {
             STGroup.GetComponent<Text>().text = ItemGroup_I[ListNum];
+            if (SaveData.ListNum_I == ListNum)
+            {
+                GameObject.Find("StampsBundle").transform.Find("UsingSkin").gameObject.SetActive(true);
+            }
+            else
+            {
+                GameObject.Find("StampsBundle").transform.Find("UsingSkin").gameObject.SetActive(false);
+            }
         }
+
+        
+
         choseStampSkin();
         //UnityEngine.Debug.Log("Back Arrow");
     }
@@ -338,6 +428,7 @@ public class StoreLobbyMovement : MonoBehaviour
             if (SaveData.Stamp_Get[ListNum] == true)
             {
                 SaveData.ListNum_S = ListNum;
+                GameObject.Find("StampsBundle").transform.Find("UsingSkin").gameObject.SetActive(true);
                 UnityEngine.Debug.Log("이미 구매함 스킨 설정됨");
                 SaveData.Saves();
                 return;
@@ -347,6 +438,7 @@ public class StoreLobbyMovement : MonoBehaviour
             {
                 SaveData.ListNum_S = ListNum;
                 SaveData.Saves();
+                GameObject.Find("StampsBundle").transform.Find("UsingSkin").gameObject.SetActive(true);
                 UnityEngine.Debug.Log("기본 스킨임");
                 return;
             }
@@ -360,6 +452,7 @@ public class StoreLobbyMovement : MonoBehaviour
             {
                 SaveData.ListNum_T = ListNum;
                 SaveData.Saves();
+                GameObject.Find("StampsBundle").transform.Find("UsingSkin").gameObject.SetActive(true);
                 UnityEngine.Debug.Log("이미 구매함 스킨 설정됨");
                 return;
             }
@@ -368,6 +461,7 @@ public class StoreLobbyMovement : MonoBehaviour
             {
                 SaveData.ListNum_T = ListNum;
                 SaveData.Saves();
+                GameObject.Find("StampsBundle").transform.Find("UsingSkin").gameObject.SetActive(true);
                 UnityEngine.Debug.Log("기본 스킨임");
                 return;
             }
@@ -380,6 +474,7 @@ public class StoreLobbyMovement : MonoBehaviour
             {
                 SaveData.ListNum_I = ListNum;
                 SaveData.Saves();
+                GameObject.Find("StampsBundle").transform.Find("UsingSkin").gameObject.SetActive(true);
                 UnityEngine.Debug.Log("이미 구매함 스킨 설정됨");
                 return;
             }
@@ -388,6 +483,7 @@ public class StoreLobbyMovement : MonoBehaviour
             {
                 SaveData.ListNum_I = ListNum;
                 SaveData.Saves();
+                GameObject.Find("StampsBundle").transform.Find("UsingSkin").gameObject.SetActive(true);
                 UnityEngine.Debug.Log("기본 스킨임");
                 return;
             }
@@ -494,6 +590,9 @@ public class StoreLobbyMovement : MonoBehaviour
                 { //구매 완료
                     GameObject.Find("StampsBundle").transform.Find("NotBuy_I").gameObject.SetActive(false);
                     GameObject.Find("StampsBundle").transform.Find("BuyComplete").gameObject.SetActive(true);
+
+                    
+
 
                     GameObject goImage = GameObject.Find("ShowShape");
                     Color color = goImage.GetComponent<Image>().color;

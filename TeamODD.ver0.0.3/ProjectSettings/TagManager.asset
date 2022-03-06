@@ -12,6 +12,7 @@ TagManager:
   - Sign
   - Letter
   - Wax
+  - PaperObj
   layers:
   - Default
   - TransparentFX

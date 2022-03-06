@@ -8,6 +8,7 @@ public class HubButton : MonoBehaviour
 {
     public GameObject Canvas;
     public GameObject MatchLoading;
+    public static int audiostop = 0;
 
     void Start()
     {
@@ -29,6 +30,7 @@ public class HubButton : MonoBehaviour
         //UnityEngine.Debug.Log("Join Room");
         //SceneManager.LoadScene("GameLobby");
         SceneManager.LoadScene("GamePlayScene");
+        audiostop = 1;
     }
 
     public void ShopStampSkins()

@@ -7,7 +7,7 @@ public class BoardControllerScript : MonoBehaviour
 {
     public GameObject[] stampPrefabs;
     private GameObject stampPrefab;
-    private SpriteRenderer stampInjuTapObjRenderer;
+    //private SpriteRenderer stampInjuTapObjRenderer;
     public Sprite[] stampSprite;
     
     public GameObject stampInjuAnimation;
@@ -15,7 +15,7 @@ public class BoardControllerScript : MonoBehaviour
 
     public Text injuText;
 
-    GameObject stampInjuTap;
+    //GameObject stampInjuTap;
     GameObject stampInju;
     public GameObject stampInju2;
 
@@ -47,13 +47,13 @@ public class BoardControllerScript : MonoBehaviour
         SaveData.DoLoadData = true;
         SaveData.Loads();
         injuText.text = "x10";
-        stampInjuTap = GameObject.Find("StampInjuTapObj");
+        //stampInjuTap = GameObject.Find("StampInjuTapObj");
         BackgroundIMG = GameObject.Find("BackgroundIMG");
         //stampInjuTap.GetComponent<SpriteRenderer>().enabled = false;
         stampPrefab = stampPrefabs[SaveData.ListNum_S];
 
-        stampInjuTapObjRenderer = stampInjuTap.GetComponent<SpriteRenderer>();
-        stampInjuTapObjRenderer.sprite = stampSprite[SaveData.ListNum_S];
+        //stampInjuTapObjRenderer = stampInjuTap.GetComponent<SpriteRenderer>();
+        //stampInjuTapObjRenderer.sprite = stampSprite[SaveData.ListNum_S];
 
         BackgroundIMGRenderer = BackgroundIMG.GetComponent<SpriteRenderer>();
         BackgroundIMGRenderer.sprite = tableSprite[SaveData.ListNum_T];
@@ -119,14 +119,12 @@ public class BoardControllerScript : MonoBehaviour
                     inkValue = 10;
                     injuText.text = "x" + inkValue;
                     stampInju = hit.transform.gameObject;
-                    stampInjuTap.GetComponent<SpriteRenderer>().enabled = true;
+                    //stampInjuTap.GetComponent<SpriteRenderer>().enabled = true;
                     stampInjuOpen = false;
                     Invoke("InjuClose", 0.3f);
-                    
                 }
                 else
                 {
-                   
                     mouseDownPosition = touchPos;
                     stampInjuTouch = true;
                 }
@@ -186,10 +184,10 @@ public class BoardControllerScript : MonoBehaviour
     {
         SaveData.Loads();
         SoundManager.soundManager.INZ_2PlaySound();
-        stampInjuTap.GetComponent<SpriteRenderer>().enabled = false;
+       // stampInjuTap.GetComponent<SpriteRenderer>().enabled = false;
         //stampInju.transform.gameObject.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/StampInjuCloseImg");
         stampInju.transform.gameObject.GetComponent<SpriteRenderer>().sprite = stampInjuClosedSprite[SaveData.ListNum_I];
-        Instantiate(stampInjuAnimation, new Vector2(stampInjuTap.transform.position.x, stampInjuTap.transform.position.y), Quaternion.identity);
+        //Instantiate(stampInjuAnimation, new Vector2(stampInjuTap.transform.position.x, stampInjuTap.transform.position.y), Quaternion.identity);
         Destroy(GameObject.Find(stampInjuAnimation.name + "(Clone)"), 0.2f);
 
     }
