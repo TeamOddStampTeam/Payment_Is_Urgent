@@ -23,6 +23,7 @@ public class BackgroundMusicManager : MonoBehaviour
     {
         if(HubButton.audiostop == 1)
         {
+            backmusic.Stop();
             GameObject.Destroy(BackgroundMusic);
             GameObject.Destroy(backmusic);
         }
