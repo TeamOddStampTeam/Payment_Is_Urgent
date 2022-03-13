@@ -139,16 +139,15 @@ public class BoardControllerScript : MonoBehaviour
                 mouseUpPosition = touchPos;
 
                 //inju open
-                if (mouseUpPosition.y > mouseDownPosition.y + 0.3f)
+                if (mouseUpPosition.y > mouseDownPosition.y + 0.3f && mouseUpPosition.y < mouseDownPosition.y + 1.5f)
                 {
-                    if (hit.transform.gameObject.name == "StampInjuObj")
-                    {
+                    //if (hit.transform.gameObject.name == "StampInjuObj")
+                    //{
                         SoundManager.soundManager.INZ_1PlaySound();
-                        //hit.transform.gameObject.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/StampInjuFullImg");
-                        hit.transform.gameObject.GetComponent<SpriteRenderer>().sprite = stampInjuOpenSprite[SaveData.ListNum_I];
+                        stampInju2.GetComponent<SpriteRenderer>().sprite = stampInjuOpenSprite[SaveData.ListNum_I];
                         stampInjuOpen = true;
                         stampInjuTouch = false;
-                    }
+                    //}
                 }
 
             }
@@ -160,16 +159,15 @@ public class BoardControllerScript : MonoBehaviour
                     mouseUpPosition = touchPos;
 
                     //inju open
-                    if (mouseUpPosition.y > mouseDownPosition.y + 0.3f)
+                    if (mouseUpPosition.y > mouseDownPosition.y + 0.3f && mouseUpPosition.y < mouseDownPosition.y + 1.5f)
                     {
-                        if (hit.transform.gameObject.name == "StampInjuObj")
-                        {
+                        //if (hit.transform.gameObject.name == "StampInjuObj")
+                        //{
                             SoundManager.soundManager.INZ_1PlaySound();
-                            //hit.transform.gameObject.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/StampInjuFullImg");
-                            hit.transform.gameObject.GetComponent<SpriteRenderer>().sprite = stampInjuOpenSprite[SaveData.ListNum_I];
+                            stampInju2.GetComponent<SpriteRenderer>().sprite = stampInjuOpenSprite[SaveData.ListNum_I];
                             stampInjuOpen = true;
                             stampInjuTouch = false;
-                        }
+                        //}
                     }
                 }
             }
