@@ -13,6 +13,7 @@ TagManager:
   - Letter
   - Wax
   - PaperObj
+  - Button
   layers:
   - Default
   - TransparentFX

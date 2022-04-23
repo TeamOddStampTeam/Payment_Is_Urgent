@@ -17,14 +17,20 @@ public class Logo_Button : MonoBehaviour
 
         SaveData.Loads();
 
-        if(SaveData.Check_Loads_Files == false){
-            IBM.SetActive(true); 
+        if (SaveData.Check_Loads_Files == false)
+        {
+            IBM.SetActive(true);
         }
-        else SceneManager.LoadScene("SampleScene");
+        else
+        {
+            HubButton.audiostop = 0;
+            SceneManager.LoadScene("SampleScene");
+        }
     }
 
     public void Goto_GameTutorial()
     {
+        HubButton.audiostop = 0;
         SceneManager.LoadScene("IntroduceHowtoplay");
     }
 

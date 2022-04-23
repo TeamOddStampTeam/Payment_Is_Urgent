@@ -711,4 +711,5 @@ public class StoreLobbyMovement : MonoBehaviour
         SoundManager.soundManager.ButtonChoicePlaySound();
         IBM.SetActive(false);
     }
+
 }

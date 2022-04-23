@@ -67,6 +67,9 @@ public class HubButton : MonoBehaviour
     {
         
     }
-
-    
+    public void GotoTitle()
+    {
+        audiostop = 1;
+        SceneManager.LoadScene("Tutorials");
+    }
 }

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ButtonScript : MonoBehaviour
 {
@@ -46,5 +47,10 @@ public class ButtonScript : MonoBehaviour
 
         GameObject.Find("GameController").GetComponent<GeneratorControllerScript>().ResetScore();
         GameObject.Find("SealingWaxDummyObj").GetComponent<SealingWaxScript2>().LetterReset();
+    }
+
+    public void OnGotoLobbyClick()
+    {
+        SceneManager.LoadScene("SampleScene");
     }
 }
