@@ -6,17 +6,30 @@ using UnityEngine.SceneManagement;
 public class ButtonScript : MonoBehaviour
 {
     public GameObject letterPrefab;
+    public GameObject IBM;
+    bool Pause;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        Pause = false;
+        IBM.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(Pause == false)
+        {
+            Time.timeScale = 0;
+            Pause = true;
+        }
+
+        if(Pause == true)
+        {
+            Time.timeScale = 1;
+            Pause = false;
+        }
     }
 
     public void OnResetClick()
@@ -51,6 +64,19 @@ public class ButtonScript : MonoBehaviour
 
     public void OnGotoLobbyClick()
     {
+        Pause = true;
+        IBM.SetActive(true);
+    }
+
+    public void OK_Button()
+    {
+        IBM.SetActive(false);
+        Pause = false;
         SceneManager.LoadScene("SampleScene");
+    }
+    public void Cancel_Button()
+    {
+        Pause = false;
+        IBM.SetActive(false);
     }
 }

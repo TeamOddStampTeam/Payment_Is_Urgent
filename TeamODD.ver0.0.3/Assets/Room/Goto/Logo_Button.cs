@@ -38,4 +38,15 @@ public class Logo_Button : MonoBehaviour
     {
         IBM.SetActive(false);        
     }
+
+    public void Exit_Button()
+    {
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#elif UNITY_WEBPLAYER
+         Application.OpenURL(webplayerQuitURL);
+#else
+         Application.Quit();
+#endif
+    }
 }
