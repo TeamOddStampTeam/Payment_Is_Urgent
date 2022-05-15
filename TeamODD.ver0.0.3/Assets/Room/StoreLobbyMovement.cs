@@ -41,7 +41,7 @@ public class StoreLobbyMovement : MonoBehaviour
         IBM.SetActive(false);
         Buy_Check();
 
-        이름확인용 = GameObject.Find("TestName").GetComponent<Text>();
+        //이름확인용 = GameObject.Find("TestName").GetComponent<Text>();
         레벨확인용 = GameObject.Find("TestDuty").GetComponent<Text>();
         자본확인용 = GameObject.Find("TestMoney").GetComponent<Text>();
         점수확인용 = GameObject.Find("TestPoints").GetComponent<Text>();

@@ -21,7 +21,7 @@ public class ButtonScript : MonoBehaviour
     {
         if(Pause == false)
         {
-            Time.timeScale = 0;
+            Time.timeScale = 0; //정지
             Pause = true;
         }
 
