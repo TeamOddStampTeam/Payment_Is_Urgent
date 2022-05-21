@@ -20,10 +20,14 @@ public class BoardControllerScript : MonoBehaviour
     GameObject stampInju;
     public GameObject stampInju2;
 
+    public GameObject SealingWaxStampObj;
+
     public Sprite[] stampInjuClosedSprite;
     public Sprite[] stampInjuOpenSprite;
 
     public Sprite[] tableSprite;
+
+    public Sprite[] SealingWaxStampSprite;
 
     Vector2 mouseUpPosition;
     Vector2 mouseDownPosition;
@@ -60,6 +64,7 @@ public class BoardControllerScript : MonoBehaviour
         BackgroundIMGRenderer.sprite = tableSprite[SaveData.ListNum_T];
 
         stampInju2.GetComponent<SpriteRenderer>().sprite = stampInjuClosedSprite[SaveData.ListNum_I];
+        SealingWaxStampObj.GetComponent<SpriteRenderer>().sprite =  SealingWaxStampSprite[SaveData.ListNum_S];
     }
 
     // Update is called once per frame

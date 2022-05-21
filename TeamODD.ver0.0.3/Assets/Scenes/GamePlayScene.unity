@@ -2965,6 +2965,7 @@ MonoBehaviour:
   injuAmount: {fileID: 1711402618}
   injuText: {fileID: 466213774}
   stampInju2: {fileID: 506896753}
+  SealingWaxStampObj: {fileID: 1954247621}
   stampInjuClosedSprite:
   - {fileID: 21300000, guid: a27282f03a3f9a24ba2a37352db8bb74, type: 3}
   - {fileID: 21300000, guid: 3e63fcbf51908ea4bac58ab75aefc33d, type: 3}
@@ -2986,6 +2987,13 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6ceeca78e3c939f47803043e4e87fda1, type: 3}
   - {fileID: 21300000, guid: d321663f661b00d489670ece1cb97e29, type: 3}
   - {fileID: 21300000, guid: d321663f661b00d489670ece1cb97e29, type: 3}
+  SealingWaxStampSprite:
+  - {fileID: 21300000, guid: 3955dc2bfc54734418a7cae0d05ef923, type: 3}
+  - {fileID: 21300000, guid: 999c2052a05e35a47990ddeef24380a7, type: 3}
+  - {fileID: 21300000, guid: aa6b6b6fe4a54b34ca8c0165566ccff3, type: 3}
+  - {fileID: 21300000, guid: 36984b05177a4b148a306926917e59dc, type: 3}
+  - {fileID: 21300000, guid: 3955dc2bfc54734418a7cae0d05ef923, type: 3}
+  - {fileID: 21300000, guid: 3955dc2bfc54734418a7cae0d05ef923, type: 3}
   stampTouch: 0
   otherTouch: 0
   stamp: 0
