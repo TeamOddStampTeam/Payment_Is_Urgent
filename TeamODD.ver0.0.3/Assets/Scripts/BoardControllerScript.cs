@@ -74,7 +74,7 @@ public class BoardControllerScript : MonoBehaviour
         Vector2 touchPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         RaycastHit2D hit = Physics2D.Raycast(touchPos, Vector2.zero);
 
-        if (Input.GetMouseButtonDown(0))
+        if ((!ButtonScript.is_Stop) && Input.GetMouseButtonDown(0))
         {
             //stamp board click 도장 생성
             if (hit.transform.gameObject.tag == "StampBoard")
@@ -137,7 +137,7 @@ public class BoardControllerScript : MonoBehaviour
             }
         }
 
-        if (Input.GetMouseButtonUp(0))
+        if ((!ButtonScript.is_Stop) && Input.GetMouseButtonUp(0))
         {
             //stamp inju click
             if (stampInjuTouch == true)
@@ -160,7 +160,7 @@ public class BoardControllerScript : MonoBehaviour
 
             if (Input.touchCount > 0)
             {
-                if (Input.GetTouch(0).phase == TouchPhase.Ended)
+                if (Input.GetTouch(0).phase == TouchPhase.Ended )
                 {
                     mouseUpPosition = touchPos;
 

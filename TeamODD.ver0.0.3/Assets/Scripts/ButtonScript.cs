@@ -7,6 +7,7 @@ public class ButtonScript : MonoBehaviour
 {
     public GameObject letterPrefab;
     public GameObject IBM;
+    public static bool is_Stop = false;
     bool Pause;
 
     // Start is called before the first frame update
@@ -65,6 +66,7 @@ public class ButtonScript : MonoBehaviour
     public void OnGotoLobbyClick()
     {
         Pause = true;
+        is_Stop = true; //뒤로가기 창 열림
         IBM.SetActive(true);
     }
 
@@ -72,11 +74,14 @@ public class ButtonScript : MonoBehaviour
     {
         IBM.SetActive(false);
         Pause = false;
+        is_Stop = false; //뒤로가기 창 닫기
         SceneManager.LoadScene("SampleScene");
     }
     public void Cancel_Button()
     {
         Pause = false;
+        is_Stop = false;
+        is_Stop = false; //뒤로가기 창 닫기
         IBM.SetActive(false);
     }
 }
