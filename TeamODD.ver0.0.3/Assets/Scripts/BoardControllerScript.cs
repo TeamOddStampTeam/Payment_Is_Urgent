@@ -117,7 +117,7 @@ public class BoardControllerScript : MonoBehaviour
             //수정 *********
 
             //stamp inju click
-            if (hit.transform.gameObject.name == "StampInjuObj")
+            if ((!ButtonScript.is_Stop) && hit.transform.gameObject.name == "StampInjuObj")
             {
                 //inju fill
                 if (stampInjuOpen == true)

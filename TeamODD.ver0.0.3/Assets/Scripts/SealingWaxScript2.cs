@@ -27,7 +27,7 @@ public class SealingWaxScript2 : MonoBehaviour
         Vector2 touchPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         RaycastHit2D hit = Physics2D.Raycast(touchPos, Vector2.zero);
 
-        if (Input.GetMouseButtonDown(0))
+        if ((!ButtonScript.is_Stop) && Input.GetMouseButtonDown(0))
         {
             if (waxTouch == true)
             {
@@ -78,29 +78,32 @@ public class SealingWaxScript2 : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if(waxTouch == false)
+        if (!ButtonScript.is_Stop)
         {
-            this.gameObject.transform.localScale = new Vector2(0.3f, 0.3f);
-            //GameObject.Find("SealingWaxDummyObj").GetComponent<SpriteRenderer>().color = new Color(50f, 50f, 50f,255);
-            
-            SoundManager.soundManager.WS_1PlaySound();
-            waxTouch = true;
-            GameObject.Find("GameController").GetComponent<BoardControllerScript>().StampOff();
-            GameObject.Find("SealingWaxStampObj").GetComponent<SealingStampScript>().WaxStampOnOff();
+            if (waxTouch == false)
+            {
+                this.gameObject.transform.localScale = new Vector2(0.3f, 0.3f);
+                //GameObject.Find("SealingWaxDummyObj").GetComponent<SpriteRenderer>().color = new Color(50f, 50f, 50f,255);
 
-        }
-        else
-        {
-            //왁스 다시 눌러서 취소
-            SoundManager.soundManager.WS_closePlaySound();
+                SoundManager.soundManager.WS_1PlaySound();
+                waxTouch = true;
+                GameObject.Find("GameController").GetComponent<BoardControllerScript>().StampOff();
+                GameObject.Find("SealingWaxStampObj").GetComponent<SealingStampScript>().WaxStampOnOff();
 
-            this.gameObject.transform.localScale = new Vector2(0.25f, 0.25f);
-            //GameObject.Find("SealingWaxDummyObj").GetComponent<SpriteRenderer>().color = new Color(255f, 255f, 255f,255);
+            }
+            else
+            {
+                //왁스 다시 눌러서 취소
+                SoundManager.soundManager.WS_closePlaySound();
 
-            waxTouch = false;
+                this.gameObject.transform.localScale = new Vector2(0.25f, 0.25f);
+                //GameObject.Find("SealingWaxDummyObj").GetComponent<SpriteRenderer>().color = new Color(255f, 255f, 255f,255);
 
-            GameObject.Find("GameController").GetComponent<BoardControllerScript>().StampOn();
+                waxTouch = false;
 
+                GameObject.Find("GameController").GetComponent<BoardControllerScript>().StampOn();
+
+            }
         }
     }
 

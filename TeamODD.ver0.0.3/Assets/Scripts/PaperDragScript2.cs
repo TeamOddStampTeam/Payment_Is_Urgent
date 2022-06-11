@@ -7,7 +7,6 @@ public class PaperDragScript2 : MonoBehaviour
     public GameObject paperAnim;
     public GameObject arrowPrefab;
 
-
     Vector2 mouseDownPosition;
     Vector2 mouseUpPosition;
 
@@ -42,6 +41,7 @@ public class PaperDragScript2 : MonoBehaviour
 
     private void OnMouseUp()
     {
+        
         mouseUpPosition = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
         mouseUpPosition = Camera.main.ScreenToWorldPoint(mouseUpPosition);
 

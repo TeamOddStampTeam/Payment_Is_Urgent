@@ -23,7 +23,7 @@ public class SealingStampScript : MonoBehaviour
         Vector2 touchPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         RaycastHit2D hit = Physics2D.Raycast(touchPos, Vector2.zero);
 
-        if (Input.GetMouseButtonDown(0))
+        if ((!ButtonScript.is_Stop) && Input.GetMouseButtonDown(0))
         {
             if (stampTouch == true)
             {
