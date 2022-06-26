@@ -109,7 +109,7 @@ public class SealingWaxScript2 : MonoBehaviour
 
     public void WaxSuccess()
     {
-        if(success == true)
+        if((!ButtonScript.is_Stop) && success == true)
         {
             Instantiate(waxAnimation, new Vector2(wax.transform.position.x, wax.transform.position.y + 0.5f), Quaternion.identity);
             wax.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/StampSealBasicImg");
@@ -159,7 +159,7 @@ public class SealingWaxScript2 : MonoBehaviour
 
     public void WaxOnOff()
     {
-        if (waxTouch == true)
+        if ((!ButtonScript.is_Stop) && waxTouch == true)
         {
            
             this.gameObject.transform.localScale = new Vector2(0.25f, 0.25f);

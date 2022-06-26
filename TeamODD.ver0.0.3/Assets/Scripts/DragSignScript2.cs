@@ -40,7 +40,7 @@ public class DragSignScript2 : MonoBehaviour
         Debug.Log("Up");
 
 
-        if (mouseUpPosition.x > mouseDownPosition.x + 1.0f)
+        if ((!ButtonScript.is_Stop) && mouseUpPosition.x > mouseDownPosition.x + 1.0f)
         {
             if(mouseUpPosition.y + 0.2f > mouseDownPosition.y && 
                 mouseDownPosition.y > mouseUpPosition.y -0.2f )

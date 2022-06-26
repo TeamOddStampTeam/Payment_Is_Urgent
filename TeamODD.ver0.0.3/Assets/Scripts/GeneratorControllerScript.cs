@@ -540,13 +540,16 @@ public class GeneratorControllerScript : MonoBehaviour
                 {
                     Invoke("PrefabReset", 0.3f);
                     Invoke("FinishPage", 0.3f);
-                }
+                }   
                 else
                 {
-                    currentScore = 4;
-                    pageScore = 4;
-                    GameObject.Find("GameController").GetComponent<BoardControllerScript>().StampBoardOnOff();
-                    Invoke("NextPage", 0.3f);
+                    if (!ButtonScript.is_Stop)
+                    {
+                        currentScore = 4;
+                        pageScore = 4;
+                        GameObject.Find("GameController").GetComponent<BoardControllerScript>().StampBoardOnOff();
+                        Invoke("NextPage", 0.3f);
+                    }
                 }
             }
         }
