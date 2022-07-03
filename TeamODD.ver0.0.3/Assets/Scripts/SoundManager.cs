@@ -13,7 +13,7 @@ public class SoundManager : MonoBehaviour
     public AudioClip reDZ_1; //전용도장 탭
     public AudioClip CH_loop; // 편지 홀드
     public AudioClip reDZ_2; // 전용도장 찍자마자 나는 소리
-    public AudioClip reDZ_close; //전용도장 취소
+    public AudioClip reDZ_close; //전용도장취소
 
     public AudioClip pen; // 가로 싸인칸
     public AudioClip pen_loop; // 그림 싸인칸

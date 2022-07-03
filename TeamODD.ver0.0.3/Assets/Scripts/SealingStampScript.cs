@@ -97,40 +97,43 @@ public class SealingStampScript : MonoBehaviour
 
     private void OnMouseDown()
     {
-        
-        
-        if (stampTouch == false)
+        if (!ButtonScript.is_Stop)
         {
-            SoundManager.soundManager.reDZ_1PlaySound();
-            this.gameObject.transform.localScale = new Vector2(0.3f, 0.3f);
-            stampTouch = true;
+            if (stampTouch == false)
+            {
+                SoundManager.soundManager.reDZ_1PlaySound();
+                this.gameObject.transform.localScale = new Vector2(0.3f, 0.3f);
+                stampTouch = true;
 
-            GameObject.Find("GameController").GetComponent<BoardControllerScript>().StampOff();
-            GameObject.Find("SealingWaxDummyObj").GetComponent<SealingWaxScript2>().WaxOnOff();
+                GameObject.Find("GameController").GetComponent<BoardControllerScript>().StampOff();
+                GameObject.Find("SealingWaxDummyObj").GetComponent<SealingWaxScript2>().WaxOnOff();
 
-        }
-        else
-        {
-            //도장 취소
-            SoundManager.soundManager.reDZ_closePlaySound();
-            this.gameObject.transform.localScale = new Vector2(0.25f, 0.25f);
-            stampTouch = false;
+            }
+            else
+            {
+                //도장 취소
+                SoundManager.soundManager.reDZ_closePlaySound();
+                this.gameObject.transform.localScale = new Vector2(0.25f, 0.25f);
+                stampTouch = false;
 
-            GameObject.Find("GameController").GetComponent<BoardControllerScript>().StampOn();
+                GameObject.Find("GameController").GetComponent<BoardControllerScript>().StampOn();
 
+            }
         }
     }
 
     public void WaxStampOnOff()
     {
-        if (stampTouch == true)
+        if (!ButtonScript.is_Stop) 
         {
-            this.gameObject.transform.localScale = new Vector2(0.25f, 0.25f);
-            stampTouch = false;
-            GameObject.Find("GameController").GetComponent<BoardControllerScript>().StampOn();
+            if (stampTouch == true)
+            {
+                this.gameObject.transform.localScale = new Vector2(0.25f, 0.25f);
+                stampTouch = false;
+                GameObject.Find("GameController").GetComponent<BoardControllerScript>().StampOn();
 
-            Debug.Log("waxstampoff");
-
+                Debug.Log("waxstampoff");
+            }
         }
 
     }
