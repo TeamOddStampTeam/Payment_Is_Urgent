@@ -30,9 +30,9 @@ public class GeneratorControllerScript : MonoBehaviour
     private int stampEmptyAmount = 30;
 
     public int pageScore = 0;
-    public static int currentScore;
+    public int currentScore;
     private int totalScore;
-    private bool success = true;
+    public static bool success = true;
 
     // Start is called before the first frame update
     void Start()

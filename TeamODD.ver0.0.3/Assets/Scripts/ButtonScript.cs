@@ -35,7 +35,7 @@ public class ButtonScript : MonoBehaviour
 
     public void OnResetClick()
     {
-        if ((!is_Stop) && GeneratorControllerScript.currentScore == 0)
+        if ((!is_Stop) && !GeneratorControllerScript.success)
         {
             GameObject.Find("GameController").GetComponent<BoardControllerScript>().StampBoardReset();
             GameObject.Find("SealingWaxDummyObj").GetComponent<SealingWaxScript2>().WaxOnOff();
