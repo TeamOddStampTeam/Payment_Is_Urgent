@@ -95,6 +95,7 @@ public class BoardControllerScript : MonoBehaviour
                             {
                                 if (otherTouch == false)
                                 {
+                                    hit.transform.gameObject.SetActive(false);
                                     GameObject.Find("GameController").GetComponent<GeneratorControllerScript>().Score();
                                 }
                             }
