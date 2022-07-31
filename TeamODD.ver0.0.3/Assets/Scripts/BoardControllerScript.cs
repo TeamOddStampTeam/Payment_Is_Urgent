@@ -34,6 +34,8 @@ public class BoardControllerScript : MonoBehaviour
 
     public bool stampTouch = false;
     public bool otherTouch = false;
+    public static int otherTouchCount = 0;
+
 
     private bool waxOn = false;
     private bool stampInjuOpen = false;
@@ -102,7 +104,7 @@ public class BoardControllerScript : MonoBehaviour
                             else
                             {
                                 otherTouch = true;
-
+                                otherTouchCount++;
                             }
                         }
                     }

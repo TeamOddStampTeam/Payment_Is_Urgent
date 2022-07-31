@@ -43,6 +43,8 @@ public class ButtonScript : MonoBehaviour
 
             SoundManager.soundManager.resetPlaySound();
 
+            BoardControllerScript.otherTouchCount = 0;
+
             GameObject[] linestampPrefabs = GameObject.FindGameObjectsWithTag("LineAndStamp");
             for (int i = 0; i < linestampPrefabs.Length; i++)
             {

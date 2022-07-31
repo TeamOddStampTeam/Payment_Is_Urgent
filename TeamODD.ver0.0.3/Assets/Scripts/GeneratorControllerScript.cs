@@ -543,7 +543,7 @@ public class GeneratorControllerScript : MonoBehaviour
                 }   
                 else
                 {
-                    if (!ButtonScript.is_Stop)
+                    if (!ButtonScript.is_Stop && BoardControllerScript.otherTouchCount == 0)
                     {
                         currentScore = 4;
                         pageScore = 4;
