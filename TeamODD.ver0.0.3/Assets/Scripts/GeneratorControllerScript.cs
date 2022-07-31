@@ -534,7 +534,7 @@ public class GeneratorControllerScript : MonoBehaviour
         currentScore--;
         if (currentScore == 0)
         {
-            if(success == true)
+            if(!ButtonScript.is_Stop && success == true)
             {
                 if (totalScore == 30)
                 {
@@ -543,7 +543,7 @@ public class GeneratorControllerScript : MonoBehaviour
                 }   
                 else
                 {
-                    if (!ButtonScript.is_Stop && BoardControllerScript.otherTouchCount == 0)
+                    if (BoardControllerScript.otherTouchCount == 0)
                     {
                         currentScore = 4;
                         pageScore = 4;
