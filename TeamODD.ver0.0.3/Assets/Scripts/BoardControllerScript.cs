@@ -36,7 +36,6 @@ public class BoardControllerScript : MonoBehaviour
     public bool otherTouch = false;
     public static int otherTouchCount = 0;
 
-
     private bool waxOn = false;
     private bool stampInjuOpen = false;
     private bool stampInjuTouch = false;
@@ -95,9 +94,10 @@ public class BoardControllerScript : MonoBehaviour
 
                             if (hit.transform.gameObject.name == "StampBoardTap")
                             {
+                                //otherTouch = false;
                                 if (otherTouch == false)
                                 {
-                                    hit.transform.gameObject.SetActive(false);
+                                    hit.transform.gameObject.GetComponent<BoxCollider2D>().enabled = false;
                                     GameObject.Find("GameController").GetComponent<GeneratorControllerScript>().Score();
                                 }
                             }

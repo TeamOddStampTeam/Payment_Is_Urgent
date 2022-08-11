@@ -32,7 +32,8 @@ public class GeneratorControllerScript : MonoBehaviour
     public int pageScore = 0;
     public int currentScore;
     private int totalScore;
-    public static bool success = true;
+    private bool success = true;
+    public static bool complete = false;
 
     // Start is called before the first frame update
     void Start()
@@ -52,6 +53,7 @@ public class GeneratorControllerScript : MonoBehaviour
 
     public void SealingOrAnother()
     {
+        complete = false;
         if (sealingAmount > 0)
         {
             int random = Random.Range(0, 3);
@@ -534,7 +536,8 @@ public class GeneratorControllerScript : MonoBehaviour
         currentScore--;
         if (currentScore == 0)
         {
-            if(!ButtonScript.is_Stop && success == true)
+            complete = true;
+            if ((!ButtonScript.is_Stop) && success == true && BoardControllerScript.otherTouchCount == 0)
             {
                 if (totalScore == 30)
                 {
@@ -543,13 +546,10 @@ public class GeneratorControllerScript : MonoBehaviour
                 }   
                 else
                 {
-                    if (BoardControllerScript.otherTouchCount == 0)
-                    {
-                        currentScore = 4;
-                        pageScore = 4;
-                        GameObject.Find("GameController").GetComponent<BoardControllerScript>().StampBoardOnOff();
-                        Invoke("NextPage", 0.3f);
-                    }
+                    currentScore = 4;
+                    pageScore = 4;
+                    GameObject.Find("GameController").GetComponent<BoardControllerScript>().StampBoardOnOff();
+                    Invoke("NextPage", 0.3f);
                 }
             }
         }

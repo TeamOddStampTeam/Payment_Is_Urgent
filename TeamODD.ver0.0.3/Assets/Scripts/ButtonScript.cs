@@ -35,7 +35,7 @@ public class ButtonScript : MonoBehaviour
 
     public void OnResetClick()
     {
-        if ((!is_Stop) && BoardControllerScript.otherTouchCount == 0)
+        if ((!is_Stop) && GeneratorControllerScript.complete == false)
         {
             GameObject.Find("GameController").GetComponent<BoardControllerScript>().StampBoardReset();
             GameObject.Find("SealingWaxDummyObj").GetComponent<SealingWaxScript2>().WaxOnOff();
@@ -44,7 +44,6 @@ public class ButtonScript : MonoBehaviour
             SoundManager.soundManager.resetPlaySound();
 
             BoardControllerScript.otherTouchCount = 0;
-
             GameObject[] linestampPrefabs = GameObject.FindGameObjectsWithTag("LineAndStamp");
             for (int i = 0; i < linestampPrefabs.Length; i++)
             {
@@ -52,6 +51,7 @@ public class ButtonScript : MonoBehaviour
             }
 
             GameObject[] stampPrefabs = GameObject.FindGameObjectsWithTag("StampBoard");
+            //GameObject[] stampPrefabTabs = stampPrefabs.transform.GetChild(0).gameObject;
             for (int i = 0; i < stampPrefabs.Length; i++)
             {
                 stampPrefabs[i].GetComponent<BoxCollider2D>().enabled = true;
@@ -65,6 +65,11 @@ public class ButtonScript : MonoBehaviour
 
             GameObject.Find("GameController").GetComponent<GeneratorControllerScript>().ResetScore();
             GameObject.Find("SealingWaxDummyObj").GetComponent<SealingWaxScript2>().LetterReset();
+        }
+
+        else
+        {
+            SoundManager.soundManager.NopePlaySound();
         }
     }
 
