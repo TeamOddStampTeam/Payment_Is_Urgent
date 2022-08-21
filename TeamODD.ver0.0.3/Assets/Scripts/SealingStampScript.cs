@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SealingStampScript : MonoBehaviour
 {
-    private bool stampTouch = false;
+    public static bool stampTouch = false;
     private bool success = true;
 
     public GameObject waxAnimation;
@@ -33,7 +33,7 @@ public class SealingStampScript : MonoBehaviour
                     Instantiate(stampBurnPrefab, new Vector2(touchPos.x, touchPos.y), Quaternion.identity);
                     Instantiate(waxAnimation, new Vector2(touchPos.x, touchPos.y + 0.5f), Quaternion.identity);
                     GameObject.Find("GameController").GetComponent<GeneratorControllerScript>().FalseScore();
-
+                    BoardControllerScript.otherTouchCount++;
                 }
 
                 if (hit.transform.gameObject.tag == "StampBoardTap")
@@ -42,7 +42,7 @@ public class SealingStampScript : MonoBehaviour
                     Instantiate(stampBurnPrefab, new Vector2(touchPos.x, touchPos.y), Quaternion.identity);
                     Instantiate(waxAnimation, new Vector2(touchPos.x, touchPos.y + 0.5f), Quaternion.identity);
                     GameObject.Find("GameController").GetComponent<GeneratorControllerScript>().FalseScore();
-
+                    BoardControllerScript.otherTouchCount++;
                 }
 
                 if (hit.transform.gameObject.tag == "Sign")
@@ -51,7 +51,7 @@ public class SealingStampScript : MonoBehaviour
                     Instantiate(stampBurnPrefab, new Vector2(touchPos.x, touchPos.y), Quaternion.identity);
                     Instantiate(waxAnimation, new Vector2(touchPos.x, touchPos.y + 0.5f), Quaternion.identity);
                     GameObject.Find("GameController").GetComponent<GeneratorControllerScript>().FalseScore();
-
+                    BoardControllerScript.otherTouchCount++;
                 }
 
                 if (hit.transform.gameObject.tag == "Letter")
@@ -63,6 +63,7 @@ public class SealingStampScript : MonoBehaviour
                         Instantiate(stampBurnPrefab, new Vector2(touchPos.x, touchPos.y), Quaternion.identity);
                         Instantiate(waxAnimation, new Vector2(touchPos.x, touchPos.y + 0.5f), Quaternion.identity);
                         GameObject.Find("GameController").GetComponent<GeneratorControllerScript>().FalseScore();
+                        BoardControllerScript.otherTouchCount++;
                     }
                     else
                     {

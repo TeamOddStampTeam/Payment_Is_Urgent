@@ -36,7 +36,7 @@ public class SealingWaxScript2 : MonoBehaviour
                     SoundManager.soundManager.reDZ_2PlaySound();
                     Instantiate(waxPrefab, new Vector2(touchPos.x, touchPos.y), Quaternion.identity);
                     GameObject.Find("GameController").GetComponent<GeneratorControllerScript>().FalseScore();
-
+                    BoardControllerScript.otherTouchCount++;
                 }
 
                 if (hit.transform.gameObject.tag == "StampBoardTap")
@@ -44,7 +44,7 @@ public class SealingWaxScript2 : MonoBehaviour
                     SoundManager.soundManager.reDZ_2PlaySound();
                     Instantiate(waxPrefab, new Vector2(touchPos.x, touchPos.y), Quaternion.identity);
                     GameObject.Find("GameController").GetComponent<GeneratorControllerScript>().FalseScore();
-
+                    BoardControllerScript.otherTouchCount++;
                 }
 
                 if (hit.transform.gameObject.tag == "Sign")
@@ -52,7 +52,7 @@ public class SealingWaxScript2 : MonoBehaviour
                     SoundManager.soundManager.reDZ_2PlaySound();
                     Instantiate(waxPrefab, new Vector2(touchPos.x, touchPos.y), Quaternion.identity);
                     GameObject.Find("GameController").GetComponent<GeneratorControllerScript>().FalseScore();
-
+                    BoardControllerScript.otherTouchCount++;
                 }
 
                 if (hit.transform.gameObject.name == "LeterTapSpaceObj")

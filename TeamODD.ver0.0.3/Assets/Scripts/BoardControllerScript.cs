@@ -66,6 +66,7 @@ public class BoardControllerScript : MonoBehaviour
 
         stampInju2.GetComponent<SpriteRenderer>().sprite = stampInjuClosedSprite[SaveData.ListNum_I];
         SealingWaxStampObj.GetComponent<SpriteRenderer>().sprite =  SealingWaxStampSprite[SaveData.ListNum_S];
+
     }
 
     // Update is called once per frame
@@ -84,8 +85,9 @@ public class BoardControllerScript : MonoBehaviour
                 {
                     if (inkValue > 0)
                     {
-                        if (stampTouch == false)
+                        if (SealingStampScript.stampTouch == false)
                         {
+                            Debug.Log("st" + SealingStampScript.stampTouch);
                             inkValue--;
                             injuText.text = "x" + inkValue;
                        

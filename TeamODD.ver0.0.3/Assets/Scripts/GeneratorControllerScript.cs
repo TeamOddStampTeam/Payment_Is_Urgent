@@ -536,9 +536,9 @@ public class GeneratorControllerScript : MonoBehaviour
         currentScore--;
         if (currentScore == 0)
         {
-            complete = true;
             if ((!ButtonScript.is_Stop) && success == true && BoardControllerScript.otherTouchCount == 0)
             {
+                complete = true;
                 if (totalScore == 30)
                 {
                     Invoke("PrefabReset", 0.3f);
