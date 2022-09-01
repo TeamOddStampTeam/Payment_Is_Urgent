@@ -13,8 +13,6 @@ public class SealingWaxScript2 : MonoBehaviour
     public GameObject waxAnimation;
     public GameObject waxPrefab;
 
-
-
     // Start is called before the first frame update
     void Start()
     {
@@ -37,6 +35,7 @@ public class SealingWaxScript2 : MonoBehaviour
                     Instantiate(waxPrefab, new Vector2(touchPos.x, touchPos.y), Quaternion.identity);
                     GameObject.Find("GameController").GetComponent<GeneratorControllerScript>().FalseScore();
                     BoardControllerScript.otherTouchCount++;
+                    success = false;
                 }
 
                 if (hit.transform.gameObject.tag == "StampBoardTap")
@@ -45,6 +44,7 @@ public class SealingWaxScript2 : MonoBehaviour
                     Instantiate(waxPrefab, new Vector2(touchPos.x, touchPos.y), Quaternion.identity);
                     GameObject.Find("GameController").GetComponent<GeneratorControllerScript>().FalseScore();
                     BoardControllerScript.otherTouchCount++;
+                    success = false;
                 }
 
                 if (hit.transform.gameObject.tag == "Sign")
@@ -53,6 +53,7 @@ public class SealingWaxScript2 : MonoBehaviour
                     Instantiate(waxPrefab, new Vector2(touchPos.x, touchPos.y), Quaternion.identity);
                     GameObject.Find("GameController").GetComponent<GeneratorControllerScript>().FalseScore();
                     BoardControllerScript.otherTouchCount++;
+                    success = false;
                 }
 
                 if (hit.transform.gameObject.name == "LeterTapSpaceObj")
@@ -67,6 +68,7 @@ public class SealingWaxScript2 : MonoBehaviour
                 {
                     SoundManager.soundManager.reDZ_2PlaySound();
                     Instantiate(waxPrefab, new Vector2(touchPos.x, touchPos.y), Quaternion.identity);
+                    success = false;
                     Debug.Log("Letter");
                     otherTouch = true;
                     GameObject.Find("GameController").GetComponent<GeneratorControllerScript>().FalseScore();
@@ -109,24 +111,26 @@ public class SealingWaxScript2 : MonoBehaviour
 
     public void WaxSuccess()
     {
-        if((!ButtonScript.is_Stop) && success == true)
+        if (!ButtonScript.is_Stop)
         {
-            Instantiate(waxAnimation, new Vector2(wax.transform.position.x, wax.transform.position.y + 0.5f), Quaternion.identity);
-            wax.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/StampSealBasicImg");
-            if(otherTouch == false)
+            if(success == true)
             {
-                SoundManager.soundManager.WS_2PlaySound();
-                StartCoroutine("FadeOut");
-                GameObject.Find("SealingWaxStampObj").GetComponent<SealingStampScript>().WaxStampOnOff();
-                GameObject.Find("GameController").GetComponent<BoardControllerScript>().StampOn();
+                Instantiate(waxAnimation, new Vector2(wax.transform.position.x, wax.transform.position.y + 0.5f), Quaternion.identity);
+                wax.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/StampSealBasicImg");
+                if (otherTouch == false)
+                {
+                    SoundManager.soundManager.WS_2PlaySound();
+                    StartCoroutine("FadeOut");
+                    GameObject.Find("SealingWaxStampObj").GetComponent<SealingStampScript>().WaxStampOnOff();
+                    GameObject.Find("GameController").GetComponent<BoardControllerScript>().StampOn();
 
-                WaxOnOff();
+                    WaxOnOff();
+                }
             }
-
-        }
-        else
-        {
-            Instantiate(waxAnimation, new Vector2(gameObject.transform.position.x, gameObject.transform.position.y + 0.5f), Quaternion.identity);
+            else
+            {
+                Instantiate(waxAnimation, new Vector2(gameObject.transform.position.x, gameObject.transform.position.y + 0.5f), Quaternion.identity);
+            }
         }
     }
 

@@ -66,19 +66,20 @@ public class SealingStampScript : MonoBehaviour
                         BoardControllerScript.otherTouchCount++;
                     }
                     else
-                    {
-                        if (success == true)
+                    { 
+                        //if (success == true)
                         {
+                            Debug.Log("LetterTapSpaceObj");
                             GameObject.Find("SealingWaxDummyObj").GetComponent<SealingWaxScript2>().WaxSuccess();
 
                         }
-                        else
+                        /*else
                         {
                             GameObject waxPiece = hit.transform.gameObject;
                             waxPiece.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/StampSealBasicImg");
                             Instantiate(waxAnimation, new Vector2(touchPos.x, touchPos.y + 0.5f), Quaternion.identity);
 
-                        }
+                        }*/
                     }
                 }
 
