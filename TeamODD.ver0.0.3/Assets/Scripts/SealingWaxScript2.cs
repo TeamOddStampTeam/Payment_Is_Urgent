@@ -11,6 +11,7 @@ public class SealingWaxScript2 : MonoBehaviour
     private GameObject wax;
 
     public GameObject waxAnimation;
+    public GameObject stampBurnPrefab;
     public GameObject waxPrefab;
 
     // Start is called before the first frame update
@@ -109,7 +110,7 @@ public class SealingWaxScript2 : MonoBehaviour
         }
     }
 
-    public void WaxSuccess()
+    public void WaxSuccess(float x, float y)
     {
         if (!ButtonScript.is_Stop)
         {
@@ -117,7 +118,7 @@ public class SealingWaxScript2 : MonoBehaviour
             {
                 Instantiate(waxAnimation, new Vector2(wax.transform.position.x, wax.transform.position.y + 0.5f), Quaternion.identity);
                 wax.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/StampSealBasicImg");
-                if (otherTouch == false)
+                if (otherTouch == false && BoardControllerScript.otherTouchCount == 0)
                 {
                     SoundManager.soundManager.WS_2PlaySound();
                     StartCoroutine("FadeOut");
@@ -129,7 +130,9 @@ public class SealingWaxScript2 : MonoBehaviour
             }
             else
             {
-                Instantiate(waxAnimation, new Vector2(gameObject.transform.position.x, gameObject.transform.position.y + 0.5f), Quaternion.identity);
+                Instantiate(stampBurnPrefab, new Vector2(x, y), Quaternion.identity);
+                Instantiate(waxAnimation, new Vector2(x, y + 0.5f), Quaternion.identity);
+                BoardControllerScript.otherTouchCount++;
             }
         }
     }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class SealingStampScript : MonoBehaviour
 {
     public static bool stampTouch = false;
-    private bool success = true;
+    private bool success = false;
 
     public GameObject waxAnimation;
     public GameObject stampBurnPrefab;
@@ -67,19 +67,9 @@ public class SealingStampScript : MonoBehaviour
                     }
                     else
                     { 
-                        //if (success == true)
-                        {
-                            Debug.Log("LetterTapSpaceObj");
-                            GameObject.Find("SealingWaxDummyObj").GetComponent<SealingWaxScript2>().WaxSuccess();
-
-                        }
-                        /*else
-                        {
-                            GameObject waxPiece = hit.transform.gameObject;
-                            waxPiece.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/StampSealBasicImg");
-                            Instantiate(waxAnimation, new Vector2(touchPos.x, touchPos.y + 0.5f), Quaternion.identity);
-
-                        }*/
+                        success = true;
+                        Debug.Log("LetterTapSpaceObj");
+                        GameObject.Find("SealingWaxDummyObj").GetComponent<SealingWaxScript2>().WaxSuccess(touchPos.x, touchPos.y);
                     }
                 }
 
@@ -142,7 +132,7 @@ public class SealingStampScript : MonoBehaviour
 
     public void stampReset()
     {
-        success = true;
+        success = false;
     }
 
 

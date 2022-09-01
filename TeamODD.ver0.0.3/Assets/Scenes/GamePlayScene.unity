@@ -1857,6 +1857,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waxAnimation: {fileID: 3431235890981302767, guid: ab74f28342ec2714b990d3c443a7e56a, type: 3}
+  stampBurnPrefab: {fileID: 1872177211670608453, guid: 402d15edaed8cf642a022c9a55170cd8, type: 3}
   waxPrefab: {fileID: 7624354951623670853, guid: 735c86b523a4e2040812f407ca599f03, type: 3}
 --- !u!58 &1392148916
 CircleCollider2D:
