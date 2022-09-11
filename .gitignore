@@ -2,14 +2,14 @@
 #
 # Get latest from https://github.com/github/gitignore/blob/master/Unity.gitignore
 #
-TeamODD.ver0.0.3/[Ll]ibrary/
-TeamODD.ver0.0.3/[Tt]emp/
-TeamODD.ver0.0.3/[Oo]bj/
-TeamODD.ver0.0.3/[Bb]uild/
-TeamODD.ver0.0.3/[Bb]uilds/
-TeamODD.ver0.0.3/[Ll]ogs/
-TeamODD.ver0.0.3/[Mm]emoryCaptures/
-TeamODD.ver0.0.3/[Uu]ser[Ss]ettings/
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Mm]emoryCaptures/
+
 # Asset meta data should only be ignored when the corresponding asset is also ignored
 !/[Aa]ssets/**/*.meta
 
@@ -53,15 +53,8 @@ sysinfo.txt
 
 # Builds
 *.apk
-*.aab
 *.unitypackage
 
 # Crashlytics generated file
 crashlytics-build.properties
-
-# Packed Addressables
-/[Aa]ssets/[Aa]ddressable[Aa]ssets[Dd]ata/*/*.bin*
-
-# Temporary auto-generated Android Assets
-/[Aa]ssets/[Ss]treamingAssets/aa.meta
-/[Aa]ssets/[Ss]treamingAssets/aa/*
+Odd_ConvenienceStore/UserSettings/EditorUserSettings.asset
