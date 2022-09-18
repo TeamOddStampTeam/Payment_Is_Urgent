@@ -13,8 +13,8 @@ public class SealingStampScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        success = false;
 
-        
     }
 
     // Update is called once per frame
@@ -34,6 +34,7 @@ public class SealingStampScript : MonoBehaviour
                     Instantiate(waxAnimation, new Vector2(touchPos.x, touchPos.y + 0.5f), Quaternion.identity);
                     GameObject.Find("GameController").GetComponent<GeneratorControllerScript>().FalseScore();
                     BoardControllerScript.otherTouchCount++;
+                    success = false;
                 }
 
                 if (hit.transform.gameObject.tag == "StampBoardTap")
@@ -43,6 +44,7 @@ public class SealingStampScript : MonoBehaviour
                     Instantiate(waxAnimation, new Vector2(touchPos.x, touchPos.y + 0.5f), Quaternion.identity);
                     GameObject.Find("GameController").GetComponent<GeneratorControllerScript>().FalseScore();
                     BoardControllerScript.otherTouchCount++;
+                    success = false;
                 }
 
                 if (hit.transform.gameObject.tag == "Sign")
@@ -52,6 +54,7 @@ public class SealingStampScript : MonoBehaviour
                     Instantiate(waxAnimation, new Vector2(touchPos.x, touchPos.y + 0.5f), Quaternion.identity);
                     GameObject.Find("GameController").GetComponent<GeneratorControllerScript>().FalseScore();
                     BoardControllerScript.otherTouchCount++;
+                    success = false;
                 }
 
                 if (hit.transform.gameObject.tag == "Letter")
@@ -79,7 +82,7 @@ public class SealingStampScript : MonoBehaviour
                     GameObject waxPiece = hit.transform.gameObject;
                     waxPiece.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/StampSealBasicImg");
                     Instantiate(waxAnimation, new Vector2(touchPos.x, touchPos.y + 0.5f), Quaternion.identity);
-
+                    success = false;
                     Debug.Log("99");
 
                 }

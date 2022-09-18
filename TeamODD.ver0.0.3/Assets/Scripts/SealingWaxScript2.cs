@@ -17,7 +17,7 @@ public class SealingWaxScript2 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        success = false;
     }
 
     // Update is called once per frame
@@ -37,6 +37,7 @@ public class SealingWaxScript2 : MonoBehaviour
                     GameObject.Find("GameController").GetComponent<GeneratorControllerScript>().FalseScore();
                     BoardControllerScript.otherTouchCount++;
                     success = false;
+                    otherTouch = true;
                 }
 
                 if (hit.transform.gameObject.tag == "StampBoardTap")
@@ -46,6 +47,7 @@ public class SealingWaxScript2 : MonoBehaviour
                     GameObject.Find("GameController").GetComponent<GeneratorControllerScript>().FalseScore();
                     BoardControllerScript.otherTouchCount++;
                     success = false;
+                    otherTouch = true;
                 }
 
                 if (hit.transform.gameObject.tag == "Sign")
@@ -55,6 +57,7 @@ public class SealingWaxScript2 : MonoBehaviour
                     GameObject.Find("GameController").GetComponent<GeneratorControllerScript>().FalseScore();
                     BoardControllerScript.otherTouchCount++;
                     success = false;
+                    otherTouch = true;
                 }
 
                 if (hit.transform.gameObject.name == "LeterTapSpaceObj")
@@ -63,7 +66,7 @@ public class SealingWaxScript2 : MonoBehaviour
                     wax = hit.transform.gameObject;
                     SoundManager.soundManager.reDZ_2PlaySound();
                     success = true;
-                    
+                    otherTouch = false;
                 }
                 else if (hit.transform.gameObject.tag == "Letter")
                 {
@@ -159,7 +162,7 @@ public class SealingWaxScript2 : MonoBehaviour
         {
             Destroy(waxObjects[i]);
         }
-
+        success = false;
         SoundManager.soundManager.LetterSPlaySound();
         GameObject.Find("GameController").GetComponent<GeneratorControllerScript>().LetterScore();
     }

@@ -150,7 +150,7 @@ public class BoardControllerScript : MonoBehaviour
                 mouseUpPosition = touchPos;
 
                 //inju open
-                if (mouseUpPosition.y > mouseDownPosition.y + 0.9f && mouseUpPosition.y < mouseDownPosition.y + 1.35f)
+                if (mouseUpPosition.y > mouseDownPosition.y + 0.9f && mouseUpPosition.y < mouseDownPosition.y + 1.30f)
                 {
                     //if (hit.transform.gameObject.name == "StampInjuObj")
                     //{
@@ -170,7 +170,7 @@ public class BoardControllerScript : MonoBehaviour
                     mouseUpPosition = touchPos;
 
                     //inju open
-                    if (mouseUpPosition.y > mouseDownPosition.y + 0.9f && mouseUpPosition.y < mouseDownPosition.y + 1.35f)
+                    if (mouseUpPosition.y > mouseDownPosition.y + 0.9f && mouseUpPosition.y < mouseDownPosition.y + 1.30f)
                     {
                         //if (hit.transform.gameObject.name == "StampInjuObj")
                         //{
