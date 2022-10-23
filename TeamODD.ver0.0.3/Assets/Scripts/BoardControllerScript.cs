@@ -132,6 +132,7 @@ public class BoardControllerScript : MonoBehaviour
                     stampInju = hit.transform.gameObject;
                     //stampInjuTap.GetComponent<SpriteRenderer>().enabled = true;
                     stampInjuOpen = false;
+                    stampInjuTouch = false;
                     Invoke("InjuClose", 0.3f);
                 }
                 else
@@ -150,16 +151,17 @@ public class BoardControllerScript : MonoBehaviour
                 mouseUpPosition = touchPos;
 
                 //inju open
-                if (mouseUpPosition.y > mouseDownPosition.y + 0.9f && mouseUpPosition.y < mouseDownPosition.y + 1.30f)
-                {
-                    //if (hit.transform.gameObject.name == "StampInjuObj")
-                    //{
+                //if (hit.transform.gameObject.name == "StampInjuObj")
+                //{
+                    if (mouseUpPosition.y > mouseDownPosition.y + 0.3f && mouseUpPosition.y < mouseDownPosition.y + 1.50f)
+                    {
+                    
                         SoundManager.soundManager.INZ_1PlaySound();
                         stampInju2.GetComponent<SpriteRenderer>().sprite = stampInjuOpenSprite[SaveData.ListNum_I];
                         stampInjuOpen = true;
                         stampInjuTouch = false;
-                    //}
-                }
+                    }
+               // }
 
             }
 
@@ -170,16 +172,16 @@ public class BoardControllerScript : MonoBehaviour
                     mouseUpPosition = touchPos;
 
                     //inju open
-                    if (mouseUpPosition.y > mouseDownPosition.y + 0.9f && mouseUpPosition.y < mouseDownPosition.y + 1.30f)
-                    {
-                        //if (hit.transform.gameObject.name == "StampInjuObj")
-                        //{
+                   // if (hit.transform.gameObject.name == "StampInjuObj")
+                    //{
+                        if (mouseUpPosition.y > mouseDownPosition.y + 0.3f && mouseUpPosition.y < mouseDownPosition.y + 1.50f)
+                        {
                             SoundManager.soundManager.INZ_1PlaySound();
                             stampInju2.GetComponent<SpriteRenderer>().sprite = stampInjuOpenSprite[SaveData.ListNum_I];
                             stampInjuOpen = true;
                             stampInjuTouch = false;
-                        //}
-                    }
+                        }
+                    //}
                 }
             }
 
