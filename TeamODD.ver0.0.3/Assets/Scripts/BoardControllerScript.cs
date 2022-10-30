@@ -29,6 +29,8 @@ public class BoardControllerScript : MonoBehaviour
 
     public Sprite[] SealingWaxStampSprite;
 
+    public Sprite[] SealingWaxStampResultSprite;
+
     Vector2 mouseUpPosition;
     Vector2 mouseDownPosition;
 
