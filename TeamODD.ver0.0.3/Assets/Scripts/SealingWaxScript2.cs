@@ -14,6 +14,8 @@ public class SealingWaxScript2 : MonoBehaviour
     public GameObject stampBurnPrefab;
     public GameObject waxPrefab;
 
+    public Sprite[] WaxPieceSprite;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -120,7 +122,7 @@ public class SealingWaxScript2 : MonoBehaviour
             if(success == true)
             {
                 Instantiate(waxAnimation, new Vector2(wax.transform.position.x, wax.transform.position.y + 0.5f), Quaternion.identity);
-                wax.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/StampSealBasicImg");
+                wax.GetComponent<SpriteRenderer>().sprite = WaxPieceSprite[SaveData.ListNum_S];
                 if (otherTouch == false && BoardControllerScript.otherTouchCount == 0)
                 {
                     SoundManager.soundManager.WS_2PlaySound();

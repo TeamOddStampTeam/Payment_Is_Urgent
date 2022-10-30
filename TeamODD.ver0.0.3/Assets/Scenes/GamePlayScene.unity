@@ -1859,6 +1859,13 @@ MonoBehaviour:
   waxAnimation: {fileID: 3431235890981302767, guid: ab74f28342ec2714b990d3c443a7e56a, type: 3}
   stampBurnPrefab: {fileID: 1872177211670608453, guid: 402d15edaed8cf642a022c9a55170cd8, type: 3}
   waxPrefab: {fileID: 7624354951623670853, guid: 735c86b523a4e2040812f407ca599f03, type: 3}
+  WaxPieceSprite:
+  - {fileID: 21300000, guid: bb10cab588b23e940bb603b6e10233b1, type: 3}
+  - {fileID: 21300000, guid: 6cb3f581e06ff134c9d40ad3049dea91, type: 3}
+  - {fileID: 21300000, guid: e723a3e07ddf6cd45b8ffe1b4a5eb1f1, type: 3}
+  - {fileID: 21300000, guid: f50b870d012c32142b2bab0b86db777c, type: 3}
+  - {fileID: 21300000, guid: bb10cab588b23e940bb603b6e10233b1, type: 3}
+  - {fileID: 21300000, guid: bb10cab588b23e940bb603b6e10233b1, type: 3}
 --- !u!58 &1392148916
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2915,13 +2922,6 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 36984b05177a4b148a306926917e59dc, type: 3}
   - {fileID: 21300000, guid: 3955dc2bfc54734418a7cae0d05ef923, type: 3}
   - {fileID: 21300000, guid: 3955dc2bfc54734418a7cae0d05ef923, type: 3}
-  SealingWaxStampResultSprite:
-  - {fileID: 21300000, guid: bb10cab588b23e940bb603b6e10233b1, type: 3}
-  - {fileID: 21300000, guid: 6cb3f581e06ff134c9d40ad3049dea91, type: 3}
-  - {fileID: 21300000, guid: e723a3e07ddf6cd45b8ffe1b4a5eb1f1, type: 3}
-  - {fileID: 21300000, guid: f50b870d012c32142b2bab0b86db777c, type: 3}
-  - {fileID: 21300000, guid: bb10cab588b23e940bb603b6e10233b1, type: 3}
-  - {fileID: 21300000, guid: bb10cab588b23e940bb603b6e10233b1, type: 3}
   stampTouch: 0
   otherTouch: 0
   stamp: 0
