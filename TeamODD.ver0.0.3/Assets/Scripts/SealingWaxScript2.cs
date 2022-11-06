@@ -64,11 +64,20 @@ public class SealingWaxScript2 : MonoBehaviour
 
                 if (hit.transform.gameObject.name == "LeterTapSpaceObj")
                 {
-                    hit.transform.gameObject.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/StampSealPieceImg");
-                    wax = hit.transform.gameObject;
                     SoundManager.soundManager.reDZ_2PlaySound();
-                    success = true;
-                    otherTouch = false;
+                    if (success == true)
+                    {
+                        Instantiate(waxPrefab, new Vector2(touchPos.x + 0.1f, touchPos.y + 0.1f), Quaternion.identity);
+                        otherTouch = true;
+                        GameObject.Find("GameController").GetComponent<GeneratorControllerScript>().FalseScore();
+                    }
+                    else
+                    {
+                        hit.transform.gameObject.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/StampSealPieceImg");
+                        wax = hit.transform.gameObject;
+                        success = true;
+                        otherTouch = false;
+                    }
                 }
                 else if (hit.transform.gameObject.tag == "Letter")
                 {
