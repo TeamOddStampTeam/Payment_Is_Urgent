@@ -16,7 +16,7 @@ public class BoardControllerScript : MonoBehaviour
 
     public Text injuText;
 
-    //GameObject stampInjuTap;
+    GameObject stampInjuTap;
     GameObject stampInju;
     public GameObject stampInju2;
 
@@ -53,7 +53,7 @@ public class BoardControllerScript : MonoBehaviour
         SaveData.DoLoadData = true;
         SaveData.Loads();
         injuText.text = "x10";
-        //stampInjuTap = GameObject.Find("StampInjuTapObj");
+        stampInjuTap = GameObject.Find("StampInjuTapObj");
         BackgroundIMG = GameObject.Find("BackgroundIMG");
         //stampInjuTap.GetComponent<SpriteRenderer>().enabled = false;
         stampPrefab = stampPrefabs[SaveData.ListNum_S];
@@ -198,7 +198,7 @@ public class BoardControllerScript : MonoBehaviour
        // stampInjuTap.GetComponent<SpriteRenderer>().enabled = false;
         //stampInju.transform.gameObject.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/StampInjuCloseImg");
         stampInju.transform.gameObject.GetComponent<SpriteRenderer>().sprite = stampInjuClosedSprite[SaveData.ListNum_I];
-        //Instantiate(stampInjuAnimation, new Vector2(stampInjuTap.transform.position.x, stampInjuTap.transform.position.y), Quaternion.identity);
+        Instantiate(stampInjuAnimation, new Vector2(stampInjuTap.transform.position.x, stampInjuTap.transform.position.y), Quaternion.identity);
         Destroy(GameObject.Find(stampInjuAnimation.name + "(Clone)"), 0.2f);
 
     }
