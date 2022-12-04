@@ -67,10 +67,12 @@ public class SealingWaxScript2 : MonoBehaviour
                 if (hit.transform.gameObject.name == "LeterTapSpaceObj")
                 {
                     SoundManager.soundManager.reDZ_2PlaySound();
+                    TapSpaceSuccess++;
                     if (success == true)
                     {
                         Instantiate(waxPrefab, new Vector2(touchPos.x + 0.1f, touchPos.y + 0.1f), Quaternion.identity);
                         otherTouch = true;
+                        BoardControllerScript.otherTouchCount++;
                         GameObject.Find("GameController").GetComponent<GeneratorControllerScript>().FalseScore();
                     }
                     else
@@ -78,7 +80,6 @@ public class SealingWaxScript2 : MonoBehaviour
                         hit.transform.gameObject.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/StampSealPieceImg");
                         wax = hit.transform.gameObject;
                         success = true;
-                        TapSpaceSuccess++;
                         otherTouch = false;
                     }
                 }
@@ -89,6 +90,7 @@ public class SealingWaxScript2 : MonoBehaviour
                     success = false;
                     Debug.Log("Letter");
                     otherTouch = true;
+                    BoardControllerScript.otherTouchCount++;
                     GameObject.Find("GameController").GetComponent<GeneratorControllerScript>().FalseScore();
 
                 }
@@ -138,6 +140,7 @@ public class SealingWaxScript2 : MonoBehaviour
                 if (otherTouch == false && BoardControllerScript.otherTouchCount == 0)
                 {
                     SoundManager.soundManager.WS_2PlaySound();
+                    Debug.Log("oT : " + otherTouch + "BoardControllerScript.otherTouchCount" + BoardControllerScript.otherTouchCount);
                     StartCoroutine("FadeOut");
                     GameObject.Find("SealingWaxStampObj").GetComponent<SealingStampScript>().WaxStampOnOff();
                     GameObject.Find("GameController").GetComponent<BoardControllerScript>().StampOn();
