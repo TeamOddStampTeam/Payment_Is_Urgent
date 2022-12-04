@@ -151,9 +151,9 @@ public class BoardControllerScript : MonoBehaviour
                 mouseUpPosition = touchPos;
 
                 //inju open
-                //if (hit.transform.gameObject.name == "StampInjuObj")
-                //{
-                    if (mouseUpPosition.y > mouseDownPosition.y + 0.3f && mouseUpPosition.y < mouseDownPosition.y + 1.50f)
+                if (hit.transform.gameObject.name == "StampInjuObj")
+                {
+                    if (mouseUpPosition.y > mouseDownPosition.y + 0.65f && mouseUpPosition.y < mouseDownPosition.y + 3.0f)
                     {
                     
                         SoundManager.soundManager.INZ_1PlaySound();
@@ -161,7 +161,7 @@ public class BoardControllerScript : MonoBehaviour
                         stampInjuOpen = true;
                         stampInjuTouch = false;
                     }
-               // }
+                }
 
             }
 
@@ -172,16 +172,16 @@ public class BoardControllerScript : MonoBehaviour
                     mouseUpPosition = touchPos;
 
                     //inju open
-                   // if (hit.transform.gameObject.name == "StampInjuObj")
-                    //{
-                        if (mouseUpPosition.y > mouseDownPosition.y + 0.3f && mouseUpPosition.y < mouseDownPosition.y + 1.50f)
+                    if (hit.transform.gameObject.name == "StampInjuObj")
+                    {
+                        if (mouseUpPosition.y > mouseDownPosition.y + 0.65f && mouseUpPosition.y < mouseDownPosition.y + 3.0f)
                         {
                             SoundManager.soundManager.INZ_1PlaySound();
                             stampInju2.GetComponent<SpriteRenderer>().sprite = stampInjuOpenSprite[SaveData.ListNum_I];
                             stampInjuOpen = true;
                             stampInjuTouch = false;
                         }
-                    //}
+                    }
                 }
             }
 
