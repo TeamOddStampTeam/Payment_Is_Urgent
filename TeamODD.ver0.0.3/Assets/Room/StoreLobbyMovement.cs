@@ -37,6 +37,7 @@ public class StoreLobbyMovement : MonoBehaviour
     public void Awake()
     {
         SaveData.DoLoadData = true;
+        SaveData.Loads();
         Money_Save = SaveData.Money;
         IBM.SetActive(false);
         Buy_Check();

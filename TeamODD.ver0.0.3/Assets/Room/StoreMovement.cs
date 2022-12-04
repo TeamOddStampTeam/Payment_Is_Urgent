@@ -32,6 +32,7 @@ public class StoreMovement : MonoBehaviour
     public void Awake()
     {
         SaveData.DoLoadData = true;
+        SaveData.Loads();
         //포인트 입력
         자본 = GameObject.Find("Money").GetComponent<Text>();
         점수 = GameObject.Find("Points").GetComponent<Text>();
