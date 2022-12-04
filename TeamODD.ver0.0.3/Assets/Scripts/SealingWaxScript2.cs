@@ -7,6 +7,7 @@ public class SealingWaxScript2 : MonoBehaviour
     private bool waxTouch = false;
     private bool success = false;
     private bool otherTouch = false;
+    private int TapSpaceSuccess = 0;
 
     private GameObject wax;
 
@@ -20,6 +21,7 @@ public class SealingWaxScript2 : MonoBehaviour
     void Start()
     {
         success = false;
+        TapSpaceSuccess = 0;
     }
 
     // Update is called once per frame
@@ -76,6 +78,7 @@ public class SealingWaxScript2 : MonoBehaviour
                         hit.transform.gameObject.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/StampSealPieceImg");
                         wax = hit.transform.gameObject;
                         success = true;
+                        TapSpaceSuccess++;
                         otherTouch = false;
                     }
                 }
@@ -128,7 +131,7 @@ public class SealingWaxScript2 : MonoBehaviour
     {
         if (!ButtonScript.is_Stop)
         {
-            if(success == true)
+            if(success == true || TapSpaceSuccess > 0)
             {
                 Instantiate(waxAnimation, new Vector2(wax.transform.position.x, wax.transform.position.y + 0.5f), Quaternion.identity);
                 wax.GetComponent<SpriteRenderer>().sprite = WaxPieceSprite[SaveData.ListNum_S];
@@ -195,6 +198,7 @@ public class SealingWaxScript2 : MonoBehaviour
         GameObject.Find("SealingWaxStampObj").GetComponent<SealingStampScript>().stampReset();
         success = false;
         otherTouch = false;
+        TapSpaceSuccess = 0;
         wax.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/None");
     }
 }
