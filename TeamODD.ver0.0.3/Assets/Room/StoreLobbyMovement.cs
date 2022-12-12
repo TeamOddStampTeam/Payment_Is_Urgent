@@ -81,6 +81,7 @@ public class StoreLobbyMovement : MonoBehaviour
 
         if (SceneManager.GetActiveScene().name == "SampleScene")
         {
+            ListNum = SaveData.ListNum_S;
             STGroup.GetComponent<Text>().text = ItemGroup_S[ListNum];
             if (SaveData.ListNum_S == ListNum)
             {
@@ -94,6 +95,7 @@ public class StoreLobbyMovement : MonoBehaviour
 
         else if (SceneManager.GetActiveScene().name == "SampleScene_T")
         {
+            ListNum = SaveData.ListNum_T;
             STGroup.GetComponent<Text>().text = ItemGroup_T[ListNum];
             if (SaveData.ListNum_T == ListNum)
             {
@@ -107,6 +109,7 @@ public class StoreLobbyMovement : MonoBehaviour
 
         else if (SceneManager.GetActiveScene().name == "SampleScene_I")
         {
+            ListNum = SaveData.ListNum_I;
             STGroup.GetComponent<Text>().text = ItemGroup_I[ListNum];
             if (SaveData.ListNum_I == ListNum)
             {

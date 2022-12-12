@@ -8,7 +8,7 @@ public class BoardControllerScript : MonoBehaviour
 {
     public GameObject[] stampPrefabs;
     private GameObject stampPrefab;
-    //private SpriteRenderer stampInjuTapObjRenderer;
+    private SpriteRenderer stampInjuTapObjRenderer;
     public Sprite[] stampSprite;
     
     public GameObject stampInjuAnimation;
@@ -42,6 +42,7 @@ public class BoardControllerScript : MonoBehaviour
     private int inkValue = 10;
 
     public int stamp;
+    public GameObject stampAnimation;
 
     GameObject BackgroundIMG;
     private SpriteRenderer BackgroundIMGRenderer;
@@ -55,11 +56,11 @@ public class BoardControllerScript : MonoBehaviour
         injuText.text = "x10";
         stampInjuTap = GameObject.Find("StampInjuTapObj");
         BackgroundIMG = GameObject.Find("BackgroundIMG");
-        //stampInjuTap.GetComponent<SpriteRenderer>().enabled = false;
+        stampInjuTap.GetComponent<SpriteRenderer>().enabled = false;
         stampPrefab = stampPrefabs[SaveData.ListNum_S];
 
-        //stampInjuTapObjRenderer = stampInjuTap.GetComponent<SpriteRenderer>();
-        //stampInjuTapObjRenderer.sprite = stampSprite[SaveData.ListNum_S];
+        stampInjuTapObjRenderer = stampInjuTap.GetComponent<SpriteRenderer>();
+        stampInjuTapObjRenderer.sprite = stampSprite[SaveData.ListNum_S];
 
         BackgroundIMGRenderer = BackgroundIMG.GetComponent<SpriteRenderer>();
         BackgroundIMGRenderer.sprite = tableSprite[SaveData.ListNum_T];
@@ -92,6 +93,9 @@ public class BoardControllerScript : MonoBehaviour
                             injuText.text = "x" + inkValue;
                        
                             Instantiate(stampPrefab, new Vector2(touchPos.x, touchPos.y), Quaternion.identity);
+                            Instantiate(stampAnimation, new Vector2(touchPos.x, touchPos.y), Quaternion.identity);
+                            Destroy(GameObject.Find(stampAnimation.name + "(Clone)"), 0.2f);
+
                             SoundManager.soundManager.StampTapPlaySound();
 
                             if (hit.transform.gameObject.name == "StampBoardTap")
