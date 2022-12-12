@@ -2925,6 +2925,7 @@ MonoBehaviour:
   stampTouch: 0
   otherTouch: 0
   stamp: 0
+  stampAnimation: {fileID: 543759178093993741, guid: a9498a4dfb238734aaaf066a2f04692f, type: 3}
 --- !u!4 &5686073798564681005
 Transform:
   m_ObjectHideFlags: 0
