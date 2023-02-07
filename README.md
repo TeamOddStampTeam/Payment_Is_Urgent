@@ -41,6 +41,6 @@
 
 ## 📌 실행 방법
 - Google Play Store : 추후 배포 예정
-- git clone 후 Unity에서 Android build 후 실행
+- git clone 후 Unity에서 build & run
 
 [:link: 자세한 기획서](https://drive.google.com/file/d/1JA2BYngBUecnbx_zKqOarGxcOErJCrON/view?usp=sharing)
