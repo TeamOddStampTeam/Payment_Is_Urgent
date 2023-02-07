@@ -17,6 +17,8 @@
 <summary> 결재가 시급해 화면 보기 </summary>
 </details>
 
+[:link: 자세한 기획서](https://drive.google.com/file/d/1JA2BYngBUecnbx_zKqOarGxcOErJCrON/view?usp=sharing)
+
 ### 플레이어 게임 조작법
 <p>
 <img src="https://user-images.githubusercontent.com/69100145/217306240-3cc7c967-36c0-498a-8a2a-1a9eeae011ca.png" height = "500"/>
@@ -43,4 +45,3 @@
 - Google Play Store : 추후 배포 예정
 - git clone 후 Unity에서 build & run
 
-[:link: 자세한 기획서](https://drive.google.com/file/d/1JA2BYngBUecnbx_zKqOarGxcOErJCrON/view?usp=sharing)
