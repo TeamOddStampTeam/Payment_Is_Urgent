@@ -35,8 +35,12 @@
 <img src="https://user-images.githubusercontent.com/69100145/217302948-8a24901c-ec1c-4d98-9730-8dd5837ed09b.png" height = "500" />
 
 
-## 📌 개발 환경
+## 🔨 개발 환경
 - Unity (2020.1.0f1)
 <br><br>
+
+## 📌 실행 방법
+- Google Play Store : 추후 배포 예정
+- git clone 후 Unity에서 Android build 후 실행
 
 [:link: 자세한 기획서](https://drive.google.com/file/d/1JA2BYngBUecnbx_zKqOarGxcOErJCrON/view?usp=sharing)
