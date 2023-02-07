@@ -1,7 +1,5 @@
 <a href="https://github.com/TeamOddStampTeam/Payment_Is_Urgent">
-    <img src="https://avatars.githubusercontent.com/u/97233034?s=200&v=4" align="right" height="90" />
-</a>
-
+    <img src="https://user-images.githubusercontent.com/69100145/217304745-21aad938-31b4-4615-b8e2-874773941657.png" align="right" height="90" />
 
 # 결재가 시급해
 > 탭과 홀드, 슬라이드를 통해 주어진 서류를 결재하는 게임
@@ -19,17 +17,26 @@
 <summary> 결재가 시급해 화면 보기 </summary>
 </details>
 
+### 플레이어 게임 조작법
 <p>
-### 플레이어 
-<img src="https://user-images.githubusercontent.com/69100145/217288762-8f516b5e-adf1-4cc9-8266-1eadbb50e1a2.png" height = "400" border="1" />
-<img src="https://user-images.githubusercontent.com/69100145/217298258-e90d4aee-79b5-4794-a74e-2ae9275b1b8d.png" height = "400" border="1" />
-<img src="https://user-images.githubusercontent.com/69100145/217298846-eba75cbd-45bf-494e-8bb7-fa5eb6bb4ea5.png" height = "400" border="1" />
-<img src="https://user-images.githubusercontent.com/69100145/217299175-b5d4550b-236d-4951-8db4-f08316856044.png" height = "400" border="1" />
+<img src="https://user-images.githubusercontent.com/69100145/217306240-3cc7c967-36c0-498a-8a2a-1a9eeae011ca.png" height = "500"/>
+<img src="https://user-images.githubusercontent.com/69100145/217306387-ba816f0f-c3b2-4ca7-a181-7d0128600a52.png" height = "500"/>
+<img src="https://user-images.githubusercontent.com/69100145/217306505-52e83d4b-2269-49fa-867a-db39c272fc97.png" height = "500"/>
+<img src="https://user-images.githubusercontent.com/69100145/217306601-049bea5a-27a7-4725-a75a-8b02a5baf4d4.png" height = "500" />
 </p>
 
+### 문제 형태
+<img src="https://user-images.githubusercontent.com/69100145/217303146-a9909276-c596-476b-8882-4489df612ff8.png" weight = "200"/>
 
+### 패널티
+<img src="https://user-images.githubusercontent.com/69100145/217303040-6732f5b9-4323-4d31-be68-3aaf4f98b50a.png" weight = "200" />
+
+### 진행 흐름도
+<img src="https://user-images.githubusercontent.com/69100145/217302948-8a24901c-ec1c-4d98-9730-8dd5837ed09b.png" height = "500" />
 
 
 ## 📌 개발 환경
 - Unity (2020.1.0f1)
 <br><br>
+
+[:link: 자세한 기획서](https://drive.google.com/file/d/1JA2BYngBUecnbx_zKqOarGxcOErJCrON/view?usp=sharing)
