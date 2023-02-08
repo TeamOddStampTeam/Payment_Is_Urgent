@@ -2,7 +2,7 @@
     <img src="https://user-images.githubusercontent.com/69100145/217304745-21aad938-31b4-4615-b8e2-874773941657.png" align="right" height="90" />
 
 # 결재가 시급해
-> 탭과 홀드, 슬라이드를 통해 주어진 서류를 결재하는 게임
+> 탭과 홀드, 슬라이드를 통해 주어진 서류를 빠르게 결재하는 PVP 모바일 게임
 
 <br>
 
